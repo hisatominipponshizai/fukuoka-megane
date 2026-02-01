@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福岡眼鏡加工センター | 眼鏡レンズ加工専門 50年の実績</title>
+    <meta name="description" content="福岡市の眼鏡レンズ加工専門店。加工歴50年、累計10万本以上の実績。2ポイント（縁なし）、特殊素材、難加工もお任せください。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",
+                         "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+                         "メイリオ", Meiryo, sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a2a4a 0%, #2d3e5f 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('photos/看板イメージJapan.png') center center / cover;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: #fff;
+            padding: 40px 20px;
+        }
+
+        .hero-logo {
+            max-width: 400px;
+            width: 80%;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .hero-catchcopy {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f5a623;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #e85a3a;
+            color: #fff;
+            margin-right: 15px;
+        }
+
+        .btn-primary:hover {
+            background: #d14a2a;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: #1a2a4a;
+        }
+
+        /* セクション共通 */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* 実績セクション */
+        .stats-section {
+            background: #fef6f3;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item .number {
+            font-size: 64px;
+            font-weight: bold;
+            color: #e85a3a;
+        }
+
+        .stat-item .unit {
+            font-size: 24px;
+            color: #e85a3a;
+        }
+
+        .stat-item .label {
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* 対応可能な加工 */
+        .services-section {
+            background: #1a2a4a;
+            color: #fff;
+        }
+
+        .services-section .section-title {
+            color: #fff;
+        }
+
+        .services-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .services-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .services-list ul {
+            list-style: none;
+        }
+
+        .services-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .services-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #e85a3a;
+            font-weight: bold;
+        }
+
+        /* 特殊加工 */
+        .special-section {
+            background: #1a2a4a;
+            color: #fff;
+        }
+
+        .special-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .special-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .special-info h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .special-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .special-card {
+            background: rgba(255,255,255,0.05);
+            padding: 20px 25px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .special-card:hover {
+            border-left-color: #e85a3a;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .special-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .special-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+
+        /* 選ばれる理由 */
+        .reasons-section {
+            background: #1a2a4a;
+            color: #fff;
+        }
+
+        .reasons-section .section-title {
+            color: #fff;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .reason-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .reason-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e85a3a, #f5a623);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+        }
+
+        .reason-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #f5a623;
+        }
+
+        .reason-card p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* 料金表 */
+        .pricing-section {
+            background: #1a2a4a;
+            color: #fff;
+        }
+
+        .pricing-section .section-title {
+            color: #f5a623;
+        }
+
+        .pricing-box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .pricing-header .phone {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .pricing-header .hours {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .pricing-table th,
+        .pricing-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .pricing-table thead th {
+            background: rgba(245,166,35,0.2);
+            color: #f5a623;
+            font-size: 14px;
+        }
+
+        .pricing-table tbody th {
+            text-align: left;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .pricing-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .pricing-feature .icon {
+            color: #f5a623;
+            font-size: 20px;
+        }
+
+        .pricing-feature h4 {
+            color: #f5a623;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .pricing-feature p {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        /* 全国対応可能 */
+        .nationwide-section {
+            background: #1a2a4a;
+            color: #fff;
+        }
+
+        .nationwide-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .nationwide-subtitle {
+            font-size: 20px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .nationwide-steps {
+            margin-top: 20px;
+        }
+
+        .nationwide-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nationwide-step:last-child {
+            border-bottom: none;
+        }
+
+        .step-num {
+            font-size: 14px;
+            font-weight: bold;
+            color: #e85a3a;
+            min-width: 30px;
+        }
+
+        .nationwide-step h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .nationwide-step p {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .shop-card {
+            background: #0f1a2e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .shop-card img {
+            width: 100%;
+            display: block;
+            filter: sepia(80%) contrast(1.0) brightness(0.9);
+        }
+
+        .shop-card-caption {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .shop-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .shop-since {
+            font-size: 12px;
+            color: #e85a3a;
+        }
+
+        /* 職人セクション */
+        .craftsman-section {
+            background: #1a2a4a;
+            color: #fff;
+        }
+
+        .craftsman-content {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .craftsman-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .craftsman-text h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .craftsman-text .subtitle {
+            color: #f5a623;
+            margin-bottom: 20px;
+        }
+
+        .craftsman-text p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .craftsman-quote {
+            border-left: 3px solid #f5a623;
+            padding-left: 20px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* お問い合わせ */
+        .contact-section {
+            background: #1a2a4a;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .contact-section .section-title {
+            color: #fff;
+        }
+
+        .contact-box {
+            display: inline-block;
+            border: 2px solid #f5a623;
+            padding: 40px 60px;
+            margin-bottom: 30px;
+        }
+
+        .contact-box .company {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .contact-box .address {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .contact-box .hours-label {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .contact-phone {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+
+        .contact-phone a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* フッター */
+        footer {
+            background: #0f1a2e;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero-catchcopy {
+                font-size: 18px;
+            }
+
+            .services-intro {
+                grid-template-columns: 1fr;
+            }
+
+            .special-content {
+                grid-template-columns: 1fr;
+            }
+
+            .reasons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nationwide-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nationwide-image {
+                order: -1;
+            }
+
+            .craftsman-content {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-features {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-phone {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヒーロー -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="photos/福岡眼鏡加工センターロゴ.png" alt="福岡眼鏡加工センター" class="hero-logo">
+            <h1>福岡眼鏡加工センター</h1>
+            <p class="subtitle">Professional Optical Craft from Japan, Since 1976</p>
+            <p class="hero-catchcopy">加工歴50年・累計10万本の実績<br>「他店で断られた難加工」お任せください</p>
+            <div>
+                <a href="tel:090-2712-2040" class="btn btn-primary">お電話でご相談</a>
+                <a href="#services" class="btn btn-outline">詳しく見る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 実績 -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="number">50</span><span class="unit">年</span>
+                    <p class="label">眼鏡加工一筋</p>
+                </div>
+                <div class="stat-item">
+                    <span class="number">10</span><span class="unit">万本+</span>
+                    <p class="label">累計加工実績</p>
+                </div>
+                <div class="stat-item">
+                    <span class="number">0.1</span><span class="unit">mm</span>
+                    <p class="label">精密な仕上がり</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 対応可能な加工 -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">対応可能な加工</h2>
+            <div class="services-intro">
+                <div class="services-image">
+                    <img src="photos/手元写真.png" alt="眼鏡加工の様子">
+                </div>
+                <div class="services-list">
+                    <h3 style="font-size: 24px; margin-bottom: 20px;">幅広い加工に対応</h3>
+                    <p style="margin-bottom: 20px; opacity: 0.8;">標準メタル・セルフレームから特殊素材まで、あらゆる眼鏡加工に対応いたします。</p>
+                    <ul>
+                        <li>標準メタル・セルフレーム</li>
+                        <li>ナイロール（溝掘り）</li>
+                        <li>2ポイント（縁なし・ツーポイント）</li>
+                        <li>ファセット（面取り・多面カット）</li>
+                        <li>特殊素材（べっ甲、バッファローホーン、木製）</li>
+                        <li>高カーブレンズ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特殊加工 -->
+    <section class="special-section">
+        <div class="container">
+            <div class="special-content">
+                <div class="special-image">
+                    <img src="photos/手元写真2.png" alt="職人の手による精密加工">
+                </div>
+                <div class="special-info">
+                    <h2>特殊加工もお任せください</h2>
+                    <div class="special-cards">
+                        <div class="special-card">
+                            <h3>特殊素材対応</h3>
+                            <p>べっ甲、バッファローホーン、木製フレームなど、特殊素材の加工も承ります。</p>
+                        </div>
+                        <div class="special-card">
+                            <h3>高カーブレンズ</h3>
+                            <p>高度な技術が必要な高カーブレンズの加工にも対応可能です。</p>
+                        </div>
+                        <div class="special-card">
+                            <h3>難加工対応</h3>
+                            <p>他店で断られた難しい加工もお気軽にご相談ください。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 選ばれる理由 -->
+    <section class="reasons-section">
+        <div class="container">
+            <h2 class="section-title">選ばれる理由</h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-icon">🔧</div>
+                    <h3>職人の手仕事</h3>
+                    <p>50年の経験による「手の感覚」で、0.1mm単位の精密な仕上がりを実現します。</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">⚙️</div>
+                    <h3>特殊案件対応</h3>
+                    <p>自動加工機では対応できない特殊案件にも柔軟に対応いたします。</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">📦</div>
+                    <h3>柔軟な対応</h3>
+                    <p>1本から大口ロット（50本以上）まで、お客様のニーズに合わせて対応します。</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon">⏱️</div>
+                    <h3>スピード対応</h3>
+                    <p>最短即日仕上げも可能です。お急ぎの場合はご相談ください。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 料金表 -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">料金のご案内</h2>
+            <div class="pricing-box">
+                <div class="pricing-header">
+                    <p style="color: #f5a623; margin-bottom: 10px;">職人直通</p>
+                    <p class="phone">Tel: 090-2712-2040</p>
+                    <p class="hours">（受付時間：平日 9:00〜17:00）</p>
+                </div>
+                <h3 style="text-align: center; color: #f5a623; margin-bottom: 20px;">加工料金目安（納期別・税込）</h3>
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>加工種類</th>
+                            <th>超特急<br><small>（当日〜翌日）</small></th>
+                            <th>通常<br><small>（3日後）</small></th>
+                            <th>ゆったり/最安<br><small>（5日後）</small></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>標準メタル・セル</th>
+                            <td>¥2,750</td>
+                            <td>¥2,200</td>
+                            <td>¥1,650</td>
+                        </tr>
+                        <tr>
+                            <th>ナイロール（溝掘り）</th>
+                            <td>¥3,300</td>
+                            <td>¥2,750</td>
+                            <td>¥2,200</td>
+                        </tr>
+                        <tr>
+                            <th>2ポイント（縁なし）</th>
+                            <td>¥5,500</td>
+                            <td>¥4,950</td>
+                            <td>¥3,850</td>
+                        </tr>
+                        <tr>
+                            <th>ファセット（面取り）</th>
+                            <td>¥13,200</td>
+                            <td>¥11,000</td>
+                            <td>¥8,800</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="text-align: center; font-size: 12px; opacity: 0.7; margin-bottom: 30px;">※特殊素材や特別な加工が必要な場合はお問合せください</p>
+                <div class="pricing-features">
+                    <div class="pricing-feature">
+                        <span class="icon">●</span>
+                        <div>
+                            <h4>大口割引あり</h4>
+                            <p>10本以上のご依頼で特別価格をご提示いたします</p>
+                        </div>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="icon">●</span>
+                        <div>
+                            <h4>全国対応</h4>
+                            <p>ゆうパック・ゆうパケットにて、日本全国どこでも対応可能です</p>
+                        </div>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="icon">●</span>
+                        <div>
+                            <h4>職人直通</h4>
+                            <p>熟練職人が直接対応。50年の経験を持つ職人がご要望にお応えします</p>
+                        </div>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="icon">●</span>
+                        <div>
+                            <h4>高品質仕上げ</h4>
+                            <p>一本一本丁寧に、完璧な仕上がりを目指して加工します</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 全国対応可能 -->
+    <section class="nationwide-section">
+        <div class="container">
+            <div class="nationwide-content">
+                <div class="nationwide-text">
+                    <h2 class="section-title" style="text-align: left;">全国対応可能</h2>
+                    <p class="nationwide-subtitle">どこからでもご依頼いただけます</p>
+                    <p style="margin-bottom: 30px; opacity: 0.8;">レターパック・ゆうパックを利用して、全国どこからでもご依頼を承ります。発送から返送まで、安心してお任せください。</p>
+                    <div class="nationwide-steps">
+                        <div class="nationwide-step">
+                            <span class="step-num">01</span>
+                            <div>
+                                <h4>お問い合わせ</h4>
+                                <p>まずはお電話でご相談</p>
+                            </div>
+                        </div>
+                        <div class="nationwide-step">
+                            <span class="step-num">02</span>
+                            <div>
+                                <h4>発送</h4>
+                                <p>レターパック等で送付</p>
+                            </div>
+                        </div>
+                        <div class="nationwide-step">
+                            <span class="step-num">03</span>
+                            <div>
+                                <h4>加工</h4>
+                                <p>職人が丁寧に加工</p>
+                            </div>
+                        </div>
+                        <div class="nationwide-step">
+                            <span class="step-num">04</span>
+                            <div>
+                                <h4>返送</h4>
+                                <p>完成品をお届け</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nationwide-image">
+                    <div class="shop-card">
+                        <img src="photos/看板.png" alt="福岡眼鏡加工センター">
+                        <div class="shop-card-caption">
+                            <p class="shop-name">福岡眼鏡加工センター</p>
+                            <p class="shop-since">Since 1976 — 眼鏡加工一筋50年</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 職人が直接対応 -->
+    <section class="craftsman-section">
+        <div class="container">
+            <div class="craftsman-content">
+                <div class="craftsman-image">
+                    <img src="photos/本人加工中写真.png" alt="職人による加工">
+                </div>
+                <div class="craftsman-text">
+                    <h2>職人が直接対応</h2>
+                    <p class="subtitle">安心のご相談体制</p>
+                    <p>まずはお電話でご相談ください。職人が直接お話を伺い、お客様のご要望に合わせた最適な加工方法をご提案いたします。</p>
+                    <blockquote class="craftsman-quote">
+                        「50年の経験を活かし、一本一本丁寧に仕上げます。どんな加工もお気軽にご相談ください。」
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">お問い合わせ</h2>
+            <p style="margin-bottom: 30px; opacity: 0.8;">福岡眼鏡加工センターへのご依頼・ご相談は、お電話にて承っております。<br>職人が直接対応いたしますので、お気軽にお問い合わせください。</p>
+            <div class="contact-box">
+                <p class="company">福岡眼鏡加工センター</p>
+                <p class="address">福岡市南区向新町1丁目3-17 リバーピア大橋301</p>
+                <p class="hours-label">営業時間：平日 9:00〜17:00</p>
+            </div>
+            <p class="contact-phone"><a href="tel:090-2712-2040">090-2712-2040</a></p>
+            <div class="contact-buttons">
+                <a href="tel:090-2712-2040" class="btn btn-primary">今すぐお電話</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 福岡眼鏡加工センター - 眼鏡加工一筋50年</p>
+    </footer>
+</body>
+</html>
