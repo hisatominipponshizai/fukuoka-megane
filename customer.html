@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一般のお客様へ | 福岡眼鏡加工センター</title>
+    <meta name="description" content="メガネの修理・調整・レンズ交換なら福岡眼鏡加工センター。基本調整1,100円〜。他店購入メガネOK。加工歴50年の職人が直接対応します。">
+    <style>
+        /* ========================================
+           共通リセット・ベース
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",
+                         "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+                         "メイリオ", Meiryo, sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ========================================
+           共通ヘッダー
+           ======================================== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 26, 46, 0.95);
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo img {
+            height: 40px;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header-nav a {
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .header-nav a:hover {
+            color: #f5a623;
+        }
+
+        .header-nav a.current {
+            color: #f5a623;
+        }
+
+        .header-phone {
+            color: #f5a623;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: #fff;
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ========================================
+           共通ボタン
+           ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #e85a3a;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #d14a2a;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: #1a2a4a;
+        }
+
+        /* ========================================
+           セクション共通
+           ======================================== */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* ========================================
+           ① ファーストビュー
+           ======================================== */
+        .fv {
+            background: linear-gradient(135deg, #1a2a4a 0%, #2d3e5f 100%);
+            color: #fff;
+            text-align: center;
+            padding: 140px 20px 80px;
+        }
+
+        .fv h1 {
+            font-size: 28px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .fv-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .fv-tag {
+            background: rgba(245,166,35,0.2);
+            border: 1px solid rgba(245,166,35,0.5);
+            color: #f5a623;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .fv-phone {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .fv-phone a {
+            color: #fff;
+        }
+
+        .fv-hours {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-bottom: 25px;
+        }
+
+        .fv .btn {
+            font-size: 18px;
+            padding: 18px 50px;
+        }
+
+        /* ========================================
+           ② お悩みセクション
+           ======================================== */
+        .worries-section {
+            background: #fef6f3;
+        }
+
+        .worries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .worry-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        .worry-card .icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .worry-card p {
+            font-size: 15px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .worries-answer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #e85a3a;
+        }
+
+        /* ========================================
+           ③ サービスメニュー（カードUI）
+           ======================================== */
+        .menu-section {
+            background: #fff;
+        }
+
+        .menu-category {
+            margin-bottom: 50px;
+        }
+
+        .menu-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .menu-category-title {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .menu-category--a .menu-category-title {
+            background: #eef4ff;
+            color: #1a2a4a;
+            border-left: 4px solid #1a2a4a;
+        }
+
+        .menu-category--b .menu-category-title {
+            background: #fef6f3;
+            color: #e85a3a;
+            border-left: 4px solid #e85a3a;
+        }
+
+        .menu-category--c .menu-category-title {
+            background: #f5f0eb;
+            color: #8b6914;
+            border-left: 4px solid #c49a2a;
+        }
+
+        .menu-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .menu-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-card-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .menu-card-note {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .menu-card-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e85a3a;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+
+        .menu-card-price.estimate {
+            font-size: 16px;
+            color: #999;
+        }
+
+        .menu-note {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #f5a623;
+        }
+
+        .menu-note p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .menu-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ========================================
+           ④ 信頼ブロック
+           ======================================== */
+        .trust-section {
+            background: #1a2a4a;
+            color: #fff;
+        }
+
+        .trust-section .section-title {
+            color: #fff;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .trust-item {
+            padding: 20px;
+        }
+
+        .trust-number {
+            font-size: 42px;
+            font-weight: bold;
+            color: #f5a623;
+        }
+
+        .trust-unit {
+            font-size: 18px;
+            color: #f5a623;
+        }
+
+        .trust-label {
+            font-size: 15px;
+            opacity: 0.85;
+            margin-top: 8px;
+        }
+
+        .trust-text {
+            font-size: 13px;
+            opacity: 0.65;
+            margin-top: 5px;
+        }
+
+        /* ========================================
+           ⑤ ご依頼の流れ
+           ======================================== */
+        .flow-section {
+            background: #f8f9fa;
+        }
+
+        .flow-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .flow-tab {
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            border: 2px solid #1a2a4a;
+            background: #fff;
+            color: #1a2a4a;
+            transition: all 0.3s;
+        }
+
+        .flow-tab.active {
+            background: #1a2a4a;
+            color: #fff;
+        }
+
+        .flow-content {
+            display: none;
+        }
+
+        .flow-content.active {
+            display: block;
+        }
+
+        .flow-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .flow-step {
+            text-align: center;
+            padding: 25px 15px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            position: relative;
+        }
+
+        .flow-step-num {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 50%;
+            background: #e85a3a;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .flow-step h4 {
+            font-size: 16px;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .flow-step p {
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* ========================================
+           ⑥ FAQ
+           ======================================== */
+        .faq-section {
+            background: #fff;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 20px 40px 20px 0;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            position: relative;
+            font-family: inherit;
+            line-height: 1.6;
+        }
+
+        .faq-question::before {
+            content: "Q.";
+            color: #e85a3a;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #ccc;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: "−";
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 0 20px 30px;
+            font-size: 15px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* ========================================
+           ⑦ 最終CTA
+           ======================================== */
+        .final-cta {
+            background: linear-gradient(135deg, #1a2a4a 0%, #0f1a2e 100%);
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .final-cta h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .final-cta-sub {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .final-cta-phone {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .final-cta-phone a {
+            color: #fff;
+        }
+
+        .final-cta-hours {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* ========================================
+           共通フッター
+           ======================================== */
+        .site-footer {
+            background: #0f1a2e;
+            color: #fff;
+            padding: 50px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #f5a623;
+        }
+
+        .footer-info p {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 2;
+        }
+
+        .footer-nav h4 {
+            font-size: 14px;
+            color: #f5a623;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-bottom: 8px;
+        }
+
+        .footer-nav a {
+            font-size: 14px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .footer-nav a:hover {
+            opacity: 1;
+            color: #f5a623;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+            opacity: 0.5;
+        }
+
+        /* ========================================
+           レスポンシブ
+           ======================================== */
+        @media (max-width: 900px) {
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 26, 46, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .header-nav.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .fv h1 {
+                font-size: 22px;
+            }
+
+            .fv-phone {
+                font-size: 30px;
+            }
+
+            .worries-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .flow-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 50px 15px;
+            }
+
+            .section-title {
+                font-size: 22px;
+                margin-bottom: 30px;
+            }
+
+            .fv {
+                padding: 110px 15px 60px;
+            }
+
+            .fv h1 {
+                font-size: 20px;
+            }
+
+            .fv-phone {
+                font-size: 26px;
+            }
+
+            .fv .btn {
+                font-size: 16px;
+                padding: 15px 40px;
+                display: block;
+            }
+
+            .worries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .trust-number {
+                font-size: 36px;
+            }
+
+            .flow-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .final-cta h2 {
+                font-size: 22px;
+            }
+
+            .final-cta-phone {
+                font-size: 32px;
+            }
+
+            .btn {
+                display: block;
+                text-align: center;
+                margin: 10px 0;
+                padding: 15px 30px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================
+         共通ヘッダー
+         ======================================== -->
+    <header class="site-header">
+        <a href="index.html" class="header-logo">
+            <img src="photos/logo.webp" alt="福岡眼鏡加工センター">
+        </a>
+        <nav class="header-nav" id="headerNav">
+            <a href="business.html">業者の方</a>
+            <a href="customer.html" class="current">一般のお客様</a>
+            <a href="about.html">職人紹介</a>
+            <a href="contact.html">お問い合わせ</a>
+            <a href="tel:090-2712-2040" class="header-phone">090-2712-2040</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- ========================================
+         ① ファーストビュー
+         ======================================== -->
+    <section class="fv">
+        <div class="container">
+            <h1>メガネの修理・調整・レンズ交換<br>職人が直接対応します</h1>
+            <div class="fv-tags">
+                <span class="fv-tag">他店購入メガネOK</span>
+                <span class="fv-tag">基本調整 1,100円〜</span>
+                <span class="fv-tag">来店・郵送どちらも対応</span>
+            </div>
+            <p class="fv-phone"><a href="tel:090-2712-2040">090-2712-2040</a></p>
+            <p class="fv-hours">受付時間：平日 9:00〜17:00</p>
+            <a href="tel:090-2712-2040" class="btn btn-primary">まずはお電話ください</a>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ② こんなお悩みありませんか？
+         ======================================== -->
+    <section class="worries-section">
+        <div class="container">
+            <h2 class="section-title">こんなお悩みありませんか？</h2>
+            <div class="worries-grid">
+                <div class="worry-card">
+                    <div class="icon">&#128291;</div>
+                    <p>メガネが広がって<br>ずり落ちてくる</p>
+                </div>
+                <div class="worry-card">
+                    <div class="icon">&#128683;</div>
+                    <p>他のお店で<br>「修理できない」と断られた</p>
+                </div>
+                <div class="worry-card">
+                    <div class="icon">&#128270;</div>
+                    <p>レンズだけ<br>交換したい</p>
+                </div>
+                <div class="worry-card">
+                    <div class="icon">&#128148;</div>
+                    <p>お気に入りのフレームが<br>壊れてしまった</p>
+                </div>
+                <div class="worry-card">
+                    <div class="icon">&#9881;</div>
+                    <p>ネジが取れた<br>鼻パッドが外れた</p>
+                </div>
+                <div class="worry-card">
+                    <div class="icon">&#128230;</div>
+                    <p>ネットで買ったフレームに<br>レンズを入れたい</p>
+                </div>
+            </div>
+            <p class="worries-answer">すべて対応できます。まずはお電話ください。</p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ③ サービスメニュー（カードUI）
+         ======================================== -->
+    <section class="menu-section">
+        <div class="container">
+            <h2 class="section-title">サービス・料金のご案内</h2>
+
+            <!-- A. 調整 -->
+            <div class="menu-category menu-category--a">
+                <div class="menu-category-title">A. 調整・軽作業</div>
+                <div class="menu-cards">
+                    <div class="menu-card">
+                        <div>
+                            <p class="menu-card-name">基本調整（フィッティング）</p>
+                            <p class="menu-card-note">掛け心地・ネジ締め・ノーズパッド調整</p>
+                        </div>
+                        <p class="menu-card-price">1,100円〜</p>
+                    </div>
+                    <div class="menu-card">
+                        <div>
+                            <p class="menu-card-name">歪み直し（軽度）</p>
+                            <p class="menu-card-note">フレームの曲がり修正</p>
+                        </div>
+                        <p class="menu-card-price">2,200円〜</p>
+                    </div>
+                    <div class="menu-card">
+                        <div>
+                            <p class="menu-card-name">歪み直し（強め/分解調整含む）</p>
+                            <p class="menu-card-note">大きな歪み・分解しての調整</p>
+                        </div>
+                        <p class="menu-card-price">3,300円〜</p>
+                    </div>
+                    <div class="menu-card">
+                        <div>
+                            <p class="menu-card-name">鼻パッド交換</p>
+                            <p class="menu-card-note">部品込み（特殊パッドは別途）</p>
+                        </div>
+                        <p class="menu-card-price">1,100円〜</p>
+                    </div>
+                    <div class="menu-card">
+                        <div>
+                            <p class="menu-card-name">ネジ交換・締め直し</p>
+                            <p class="menu-card-note">単体でのご依頼</p>
+                        </div>
+                        <p class="menu-card-price">550円〜</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- B. レンズ交換 -->
+            <div class="menu-category menu-category--b">
+                <div class="menu-category-title">B. レンズ交換（加工料 / レンズ代別途）</div>
+                <div class="menu-cards">
+                    <div class="menu-card">
+                        <div>
+                            <p class="menu-card-name">レンズ交換（標準フレーム）</p>
+                            <p class="menu-card-note">メタル・セルフレーム</p>
+                        </div>
+                        <p class="menu-card-price">2,200円〜</p>
+                    </div>
+                    <div class="menu-card">
+                        <div>
+                            <p class="menu-card-name">レンズ交換（ナイロール）</p>
+                            <p class="menu-card-note">溝掘り加工が必要なフレーム</p>
+                        </div>
+                        <p class="menu-card-price">2,750円〜</p>
+                    </div>
+                    <div class="menu-card">
+                        <div>
+                            <p class="menu-card-name">レンズ交換（縁なし・2ポイント）</p>
+                            <p class="menu-card-note">穴あけ加工が必要なフレーム</p>
+                        </div>
+                        <p class="menu-card-price">4,950円〜</p>
+                    </div>
+                    <div class="menu-card">
+                        <div>
+                            <p class="menu-card-name">特殊加工</p>
+                            <p class="menu-card-note">高カーブ・特殊素材等</p>
+                        </div>
+                        <p class="menu-card-price estimate">要見積り</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- C. 修理 -->
+            <div class="menu-category menu-category--c">
+                <div class="menu-category-title">C. 修理</div>
+                <div class="menu-cards">
+                    <div class="menu-card">
+                        <div>
+                            <p class="menu-card-name">丁番（ヒンジ）ゆるみ・調整</p>
+                            <p class="menu-card-note">開閉部分の調整</p>
+                        </div>
+                        <p class="menu-card-price">2,200円〜</p>
+                    </div>
+                    <div class="menu-card">
+                        <div>
+                            <p class="menu-card-name">丁番交換・ロー付け等</p>
+                            <p class="menu-card-note">溶接・交換が必要な場合</p>
+                        </div>
+                        <p class="menu-card-price estimate">5,500円〜 要見積</p>
+                    </div>
+                    <div class="menu-card">
+                        <div>
+                            <p class="menu-card-name">テンプル折れ・ブリッジ修理</p>
+                            <p class="menu-card-note">つる・ブリッジの破損</p>
+                        </div>
+                        <p class="menu-card-price estimate">5,500円〜 要見積</p>
+                    </div>
+                    <div class="menu-card">
+                        <div>
+                            <p class="menu-card-name">他店お断り案件</p>
+                            <p class="menu-card-note">まずはお電話でご相談ください</p>
+                        </div>
+                        <p class="menu-card-price estimate">要見積り</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 共通注記 -->
+            <div class="menu-note">
+                <p>※ 表示価格は目安です。状態確認後に正式なお見積りをお伝えします。</p>
+                <p>※ レンズ代は加工料とは別途かかります。レンズ持込OK・当店でのご用意も可能です。</p>
+                <p>※ 修理不可の場合は作業料をいただきません（郵送の返送料はご負担ください）。</p>
+                <p>※ お見積り後のキャンセルは無料です（作業着手前）。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ④ なぜ選ばれるのか（信頼ブロック）
+         ======================================== -->
+    <section class="trust-section">
+        <div class="container">
+            <h2 class="section-title">安心してお任せいただける理由</h2>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <p class="trust-number">1976<span class="trust-unit">年〜</span></p>
+                    <p class="trust-label">創業から約50年</p>
+                    <p class="trust-text">眼鏡加工ひとすじで<br>やってきました</p>
+                </div>
+                <div class="trust-item">
+                    <p class="trust-number">10<span class="trust-unit">万本+</span></p>
+                    <p class="trust-label">累計加工実績</p>
+                    <p class="trust-text">あらゆるフレーム・レンズを<br>扱ってきた経験</p>
+                </div>
+                <div class="trust-item">
+                    <p><span class="trust-number" style="font-size:28px;">職人が<br>直接対応</span></p>
+                    <p class="trust-label">ご相談から仕上げまで</p>
+                    <p class="trust-text">お電話でお話を伺い<br>最適な方法をご提案します</p>
+                </div>
+                <div class="trust-item">
+                    <p><span class="trust-number" style="font-size:28px;">他店NG<br>対応可</span></p>
+                    <p class="trust-label">断られた加工もご相談を</p>
+                    <p class="trust-text">特殊素材・難加工も<br>まずはお話しください</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ⑤ ご依頼の流れ
+         ======================================== -->
+    <section class="flow-section">
+        <div class="container">
+            <h2 class="section-title">ご依頼の流れ</h2>
+            <div class="flow-tabs">
+                <button class="flow-tab active" onclick="switchFlow('visit')">来店の場合</button>
+                <button class="flow-tab" onclick="switchFlow('mail')">郵送の場合</button>
+            </div>
+
+            <!-- 来店 -->
+            <div class="flow-content active" id="flow-visit">
+                <div class="flow-steps">
+                    <div class="flow-step">
+                        <div class="flow-step-num">1</div>
+                        <h4>お電話</h4>
+                        <p>まずはお電話で<br>ご相談ください</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step-num">2</div>
+                        <h4>ご来店</h4>
+                        <p>メガネをお持ちの上<br>お越しください</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step-num">3</div>
+                        <h4>状態確認・お見積り</h4>
+                        <p>職人が状態を確認し<br>料金をお伝えします</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step-num">4</div>
+                        <h4>作業・お渡し</h4>
+                        <p>丁寧に作業し<br>お渡しします</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 郵送 -->
+            <div class="flow-content" id="flow-mail">
+                <div class="flow-steps">
+                    <div class="flow-step">
+                        <div class="flow-step-num">1</div>
+                        <h4>お電話で相談</h4>
+                        <p>内容と料金目安を<br>お伝えします</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step-num">2</div>
+                        <h4>メガネを発送</h4>
+                        <p>レターパック等で<br>お送りください</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step-num">3</div>
+                        <h4>確認・加工</h4>
+                        <p>届き次第確認し<br>正式見積り→作業</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step-num">4</div>
+                        <h4>返送</h4>
+                        <p>完成品を<br>お届けします</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ⑥ FAQ
+         ======================================== -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">よくあるご質問</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">予約は必要ですか？</button>
+                    <div class="faq-answer">予約は必須ではありませんが、まずお電話でご相談いただくとスムーズです。状態をお伺いした上で、最適な対応方法をご案内します。</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">他店で購入したメガネでも対応してもらえますか？</button>
+                    <div class="faq-answer">はい、対応いたします。購入店を問わず、どのメガネでもご相談ください。</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">当日仕上げは可能ですか？</button>
+                    <div class="faq-answer">調整や簡単な修理は当日対応が可能です。レンズ交換や修理内容によっては数日いただく場合がございます。まずはお電話でご確認ください。</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">料金はいくらかかりますか？</button>
+                    <div class="faq-answer">基本調整は1,100円〜、レンズ交換の加工料は2,200円〜です（レンズ代別途）。メガネの状態を確認した上で正式なお見積りをお伝えしますので、安心してご相談ください。</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">古いメガネでも修理できますか？</button>
+                    <div class="faq-answer">加工歴50年の経験で、さまざまな年代・素材のメガネに対応してきました。まずは状態をお伺いしますので、お電話ください。修理不可の場合は作業料はいただきません。</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">レンズは自分で用意する必要がありますか？</button>
+                    <div class="faq-answer">レンズのお持ち込みでも、当店でのご用意でも、どちらでも対応いたします。お気軽にご相談ください。</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">遠方なのですが、郵送で依頼できますか？</button>
+                    <div class="faq-answer">はい、レターパックやゆうパックでの郵送対応も承っております。まずお電話で内容をお伺いし、発送方法をご案内します。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ⑦ 最終CTA
+         ======================================== -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>まずはお電話ください</h2>
+            <p class="final-cta-sub">職人が直接お話を伺います</p>
+            <p class="final-cta-phone"><a href="tel:090-2712-2040">090-2712-2040</a></p>
+            <p class="final-cta-hours">受付時間：平日 9:00〜17:00</p>
+            <div class="final-cta-buttons">
+                <a href="tel:090-2712-2040" class="btn btn-primary">今すぐお電話</a>
+                <a href="contact.html" class="btn btn-outline">お問い合わせフォーム</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         共通フッター
+         ======================================== -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h4>福岡眼鏡加工センター</h4>
+                <p>
+                    〒815-0032<br>
+                    福岡市南区向新町1丁目3-17<br>
+                    リバーピア大橋301<br>
+                    <br>
+                    Tel: 090-2712-2040<br>
+                    営業時間：平日 9:00〜17:00
+                </p>
+            </div>
+            <div class="footer-nav">
+                <h4>サイトメニュー</h4>
+                <ul>
+                    <li><a href="index.html">トップページ</a></li>
+                    <li><a href="business.html">業者の方</a></li>
+                    <li><a href="customer.html">一般のお客様</a></li>
+                    <li><a href="about.html">職人紹介</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>その他</h4>
+                <ul>
+                    <li><a href="privacy.html">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 福岡眼鏡加工センター — 眼鏡加工一筋50年</p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JavaScript
+         ======================================== -->
+    <script>
+        // ハンバーガーメニュー
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('headerNav').classList.toggle('active');
+        });
+
+        // FAQ アコーディオン
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                this.parentElement.classList.toggle('open');
+            });
+        });
+
+        // ご依頼の流れ タブ切替
+        function switchFlow(type) {
+            document.querySelectorAll('.flow-tab').forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.flow-content').forEach(function(content) {
+                content.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            document.getElementById('flow-' + type).classList.add('active');
+        }
+    </script>
+</body>
+</html>

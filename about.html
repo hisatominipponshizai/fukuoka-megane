@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職人紹介・会社概要 | 福岡眼鏡加工センター</title>
+    <meta name="description" content="福岡眼鏡加工センターの職人紹介と会社概要。1976年創業、加工歴50年、累計10万本以上。販売店ではなく、眼鏡加工・修理の専門工房です。">
+    <style>
+        /* ========================================
+           共通リセット・ベース
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",
+                         "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+                         "メイリオ", Meiryo, sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ========================================
+           共通ヘッダー
+           ======================================== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 26, 46, 0.95);
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo img {
+            height: 40px;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header-nav a {
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .header-nav a:hover {
+            color: #f5a623;
+        }
+
+        .header-nav a.current {
+            color: #f5a623;
+        }
+
+        .header-phone {
+            color: #f5a623;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: #fff;
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ========================================
+           共通ボタン
+           ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #e85a3a;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #d14a2a;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: #1a2a4a;
+        }
+
+        /* ========================================
+           セクション共通
+           ======================================== */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* ========================================
+           ① ヒーロー
+           ======================================== */
+        .hero {
+            background: linear-gradient(135deg, #0f1a2e 0%, #1a2a4a 100%);
+            color: #fff;
+            text-align: center;
+            padding: 140px 20px 80px;
+        }
+
+        .hero-since {
+            font-size: 16px;
+            color: #f5a623;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .hero-sub {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 35px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-num {
+            font-size: 48px;
+            font-weight: bold;
+            color: #f5a623;
+        }
+
+        .hero-stat-unit {
+            font-size: 20px;
+            color: #f5a623;
+        }
+
+        .hero-stat-label {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+
+        /* ========================================
+           ② 職人紹介
+           ======================================== */
+        .craftsman-section {
+            background: #fff;
+        }
+
+        .craftsman-content {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .craftsman-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .craftsman-text h2 {
+            font-size: 26px;
+            margin-bottom: 8px;
+            color: #1a2a4a;
+        }
+
+        .craftsman-role {
+            font-size: 14px;
+            color: #e85a3a;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .craftsman-text p {
+            margin-bottom: 16px;
+            color: #555;
+        }
+
+        .craftsman-quote {
+            border-left: 3px solid #f5a623;
+            padding-left: 20px;
+            margin-top: 25px;
+            font-style: italic;
+            color: #666;
+        }
+
+        .craftsman-strengths {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .craftsman-tag {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        /* ========================================
+           ③ 工房の強み
+           ======================================== */
+        .strengths-section {
+            background: #1a2a4a;
+            color: #fff;
+        }
+
+        .strengths-section .section-title {
+            color: #fff;
+        }
+
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .strength-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 35px 25px;
+            text-align: center;
+        }
+
+        .strength-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .strength-card h3 {
+            font-size: 18px;
+            color: #f5a623;
+            margin-bottom: 12px;
+        }
+
+        .strength-card p {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        /* ========================================
+           ④ 作業風景・設備
+           ======================================== */
+        .gallery-section {
+            background: #f8f9fa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            background: #e0e0e0;
+            aspect-ratio: 4 / 3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item--placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .gallery-note {
+            text-align: center;
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* ========================================
+           ⑤ 会社概要
+           ======================================== */
+        .company-section {
+            background: #fff;
+        }
+
+        .company-table {
+            max-width: 700px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .company-row {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            border-bottom: 1px solid #eee;
+            padding: 16px 0;
+        }
+
+        .company-label {
+            font-weight: bold;
+            color: #1a2a4a;
+            font-size: 15px;
+        }
+
+        .company-value {
+            font-size: 15px;
+            color: #555;
+        }
+
+        /* ========================================
+           ⑥ 来店のご案内
+           ======================================== */
+        .visit-section {
+            background: #fef6f3;
+        }
+
+        .visit-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .visit-content h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .visit-content p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .visit-box {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        .visit-box h3 {
+            font-size: 18px;
+            color: #e85a3a;
+            margin-bottom: 15px;
+        }
+
+        .visit-steps {
+            text-align: left;
+        }
+
+        .visit-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+        }
+
+        .visit-step-num {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            border-radius: 50%;
+            background: #e85a3a;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            min-width: 28px;
+        }
+
+        .visit-step p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        /* ========================================
+           ⑦ CTA
+           ======================================== */
+        .final-cta {
+            background: linear-gradient(135deg, #1a2a4a 0%, #0f1a2e 100%);
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .final-cta h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .final-cta-sub {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .final-cta-phone {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .final-cta-phone a {
+            color: #fff;
+        }
+
+        .final-cta-hours {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* ========================================
+           共通フッター
+           ======================================== */
+        .site-footer {
+            background: #0f1a2e;
+            color: #fff;
+            padding: 50px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #f5a623;
+        }
+
+        .footer-info p {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 2;
+        }
+
+        .footer-nav h4 {
+            font-size: 14px;
+            color: #f5a623;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-bottom: 8px;
+        }
+
+        .footer-nav a {
+            font-size: 14px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .footer-nav a:hover {
+            opacity: 1;
+            color: #f5a623;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+            opacity: 0.5;
+        }
+
+        /* ========================================
+           レスポンシブ
+           ======================================== */
+        @media (max-width: 900px) {
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 26, 46, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .header-nav.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .hero-stats {
+                gap: 25px;
+            }
+
+            .hero-stat-num {
+                font-size: 36px;
+            }
+
+            .craftsman-content {
+                grid-template-columns: 1fr;
+            }
+
+            .strengths-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 50px 15px;
+            }
+
+            .section-title {
+                font-size: 22px;
+                margin-bottom: 30px;
+            }
+
+            .hero {
+                padding: 110px 15px 60px;
+            }
+
+            .hero h1 {
+                font-size: 22px;
+            }
+
+            .hero-stat-num {
+                font-size: 32px;
+            }
+
+            .hero-stat-unit {
+                font-size: 16px;
+            }
+
+            .craftsman-text h2 {
+                font-size: 22px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .company-row {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .final-cta h2 {
+                font-size: 22px;
+            }
+
+            .final-cta-phone {
+                font-size: 32px;
+            }
+
+            .btn {
+                display: block;
+                text-align: center;
+                margin: 10px 0;
+                padding: 15px 30px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================
+         共通ヘッダー
+         ======================================== -->
+    <header class="site-header">
+        <a href="index.html" class="header-logo">
+            <img src="photos/logo.webp" alt="福岡眼鏡加工センター">
+        </a>
+        <nav class="header-nav" id="headerNav">
+            <a href="business.html">業者の方</a>
+            <a href="customer.html">一般のお客様</a>
+            <a href="about.html" class="current">職人紹介</a>
+            <a href="contact.html">お問い合わせ</a>
+            <a href="tel:090-2712-2040" class="header-phone">090-2712-2040</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- ========================================
+         ① ヒーロー
+         ======================================== -->
+    <section class="hero">
+        <div class="container">
+            <p class="hero-since">Since 1976</p>
+            <h1>眼鏡加工・修理の専門工房</h1>
+            <p class="hero-sub">販売店ではありません。加工と修理だけを、50年やってきました。</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <p class="hero-stat-num">50<span class="hero-stat-unit">年</span></p>
+                    <p class="hero-stat-label">眼鏡加工一筋</p>
+                </div>
+                <div class="hero-stat">
+                    <p class="hero-stat-num">10<span class="hero-stat-unit">万本+</span></p>
+                    <p class="hero-stat-label">累計加工実績</p>
+                </div>
+                <div class="hero-stat">
+                    <p class="hero-stat-num">0.1<span class="hero-stat-unit">mm</span></p>
+                    <p class="hero-stat-label">精密な仕上がり</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ② 職人紹介
+         ======================================== -->
+    <section class="craftsman-section">
+        <div class="container">
+            <div class="craftsman-content">
+                <div class="craftsman-image">
+                    <img src="photos/craftsman.webp" alt="職人による加工作業" loading="lazy" decoding="async">
+                </div>
+                <div class="craftsman-text">
+                    <h2>職人が直接、対応します</h2>
+                    <p class="craftsman-role">加工歴50年 / 累計10万本以上</p>
+                    <p>1976年から眼鏡加工の世界に入り、以来50年間、レンズ加工ひとすじでやってきました。</p>
+                    <p>標準的なメタルフレームから、2ポイント（縁なし）、べっ甲やバッファローホーンなどの特殊素材まで、あらゆる眼鏡を手がけてきました。</p>
+                    <p>お電話いただければ、職人である私が直接お話を伺います。状態をお聞きした上で、最適な加工方法と料金をお伝えします。</p>
+                    <blockquote class="craftsman-quote">
+                        「機械だけでは対応できない仕事があります。手の感覚で0.1mm単位の調整ができるのは、50年の経験があるからです。どんなメガネでも、まずはご相談ください。」
+                    </blockquote>
+                    <div class="craftsman-strengths">
+                        <span class="craftsman-tag">2ポイント（縁なし）</span>
+                        <span class="craftsman-tag">特殊素材</span>
+                        <span class="craftsman-tag">高カーブ</span>
+                        <span class="craftsman-tag">他店お断り案件</span>
+                        <span class="craftsman-tag">大口ロット</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ③ 工房の強み
+         ======================================== -->
+    <section class="strengths-section">
+        <div class="container">
+            <h2 class="section-title">工房のこだわり</h2>
+            <div class="strengths-grid">
+                <div class="strength-card">
+                    <div class="strength-icon">&#9881;</div>
+                    <h3>0.1mm単位の精度</h3>
+                    <p>自動加工機に頼らず、職人の手の感覚で仕上げます。長年の経験でしか出せない精密さがあります。</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">&#128736;</div>
+                    <h3>難加工への対応力</h3>
+                    <p>他店で断られた加工もご相談ください。特殊素材や複雑な形状にも、経験と技術で応えます。</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">&#129309;</div>
+                    <h3>職人が直接対応</h3>
+                    <p>ご相談から仕上げまで、同じ職人が一貫して対応します。伝達ミスがなく、ご要望を正確に反映できます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ④ 作業風景・設備
+         ======================================== -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">作業風景</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="photos/hands_01.webp" alt="精密なレンズ加工作業" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item">
+                    <img src="photos/hands_02.webp" alt="職人の手による仕上げ" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item">
+                    <img src="photos/tools.webp" alt="加工に使用する道具" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <p class="gallery-note">※ 写真は実際の作業風景です</p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ⑤ 会社概要
+         ======================================== -->
+    <section class="company-section">
+        <div class="container">
+            <h2 class="section-title">会社概要</h2>
+            <div class="company-table">
+                <div class="company-row">
+                    <div class="company-label">屋号</div>
+                    <div class="company-value">福岡眼鏡加工センター</div>
+                </div>
+                <div class="company-row">
+                    <div class="company-label">創業</div>
+                    <div class="company-value">1976年（昭和51年）</div>
+                </div>
+                <div class="company-row">
+                    <div class="company-label">事業内容</div>
+                    <div class="company-value">眼鏡レンズ加工・修理・調整（受託専門）</div>
+                </div>
+                <div class="company-row">
+                    <div class="company-label">所在地</div>
+                    <div class="company-value">〒815-0032<br>福岡市南区向新町1丁目3-17 リバーピア大橋301</div>
+                </div>
+                <div class="company-row">
+                    <div class="company-label">電話番号</div>
+                    <div class="company-value"><a href="tel:090-2712-2040" style="color:#e85a3a; font-weight:bold;">090-2712-2040</a></div>
+                </div>
+                <div class="company-row">
+                    <div class="company-label">営業時間</div>
+                    <div class="company-value">平日 9:00〜17:00</div>
+                </div>
+                <div class="company-row">
+                    <div class="company-label">定休日</div>
+                    <div class="company-value">土曜・日曜・祝日</div>
+                </div>
+                <div class="company-row">
+                    <div class="company-label">対応エリア</div>
+                    <div class="company-value">全国対応（郵送でのご依頼可能）</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ⑥ 来店のご案内
+         ======================================== -->
+    <section class="visit-section">
+        <div class="container">
+            <div class="visit-content">
+                <h2>ご来店をお考えの方へ</h2>
+                <p>当工房は加工作業を行う工房のため、ご来店の際は事前にお電話でのご相談をお願いしております。</p>
+                <p>お電話でメガネの状態やご要望をお伺いした上で、ご来店の日程を調整いたします。</p>
+                <div class="visit-box">
+                    <h3>ご来店までの流れ</h3>
+                    <div class="visit-steps">
+                        <div class="visit-step">
+                            <span class="visit-step-num">1</span>
+                            <p>まずお電話ください（090-2712-2040）</p>
+                        </div>
+                        <div class="visit-step">
+                            <span class="visit-step-num">2</span>
+                            <p>メガネの状態とご要望をお伺いします</p>
+                        </div>
+                        <div class="visit-step">
+                            <span class="visit-step-num">3</span>
+                            <p>ご来店の日時を調整します</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ⑦ CTA
+         ======================================== -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>まずはお電話ください</h2>
+            <p class="final-cta-sub">職人が直接お話を伺います</p>
+            <p class="final-cta-phone"><a href="tel:090-2712-2040">090-2712-2040</a></p>
+            <p class="final-cta-hours">受付時間：平日 9:00〜17:00</p>
+            <div class="final-cta-buttons">
+                <a href="tel:090-2712-2040" class="btn btn-primary">今すぐお電話</a>
+                <a href="contact.html" class="btn btn-outline">お問い合わせフォーム</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         共通フッター
+         ======================================== -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h4>福岡眼鏡加工センター</h4>
+                <p>
+                    〒815-0032<br>
+                    福岡市南区向新町1丁目3-17<br>
+                    リバーピア大橋301<br>
+                    <br>
+                    Tel: 090-2712-2040<br>
+                    営業時間：平日 9:00〜17:00
+                </p>
+            </div>
+            <div class="footer-nav">
+                <h4>サイトメニュー</h4>
+                <ul>
+                    <li><a href="index.html">トップページ</a></li>
+                    <li><a href="business.html">業者の方</a></li>
+                    <li><a href="customer.html">一般のお客様</a></li>
+                    <li><a href="about.html">職人紹介</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>その他</h4>
+                <ul>
+                    <li><a href="privacy.html">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 福岡眼鏡加工センター — 眼鏡加工一筋50年</p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JavaScript
+         ======================================== -->
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('headerNav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

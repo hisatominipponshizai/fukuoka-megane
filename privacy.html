@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー | 福岡眼鏡加工センター</title>
+    <meta name="description" content="福岡眼鏡加工センターのプライバシーポリシー。お客様の個人情報の取り扱いについてご説明します。">
+    <style>
+        /* ========================================
+           共通リセット・ベース
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",
+                         "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+                         "メイリオ", Meiryo, sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ========================================
+           共通ヘッダー
+           ======================================== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 26, 46, 0.95);
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo img {
+            height: 40px;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header-nav a {
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .header-nav a:hover {
+            color: #f5a623;
+        }
+
+        .header-phone {
+            color: #f5a623;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: #fff;
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ========================================
+           コンテンツ
+           ======================================== */
+        .privacy-hero {
+            background: #1a2a4a;
+            color: #fff;
+            text-align: center;
+            padding: 130px 20px 60px;
+        }
+
+        .privacy-hero h1 {
+            font-size: 28px;
+        }
+
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px 80px;
+        }
+
+        .privacy-section {
+            margin-bottom: 40px;
+        }
+
+        .privacy-section h2 {
+            font-size: 20px;
+            color: #1a2a4a;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f5a623;
+        }
+
+        .privacy-section p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .privacy-section ul {
+            margin: 10px 0 10px 20px;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .privacy-section li {
+            margin-bottom: 6px;
+        }
+
+        .privacy-info-table {
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        .privacy-info-row {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        .privacy-info-label {
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .privacy-info-value {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .privacy-date {
+            text-align: right;
+            font-size: 14px;
+            color: #999;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        /* ========================================
+           共通フッター
+           ======================================== */
+        .site-footer {
+            background: #0f1a2e;
+            color: #fff;
+            padding: 50px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #f5a623;
+        }
+
+        .footer-info p {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 2;
+        }
+
+        .footer-nav h4 {
+            font-size: 14px;
+            color: #f5a623;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-bottom: 8px;
+        }
+
+        .footer-nav a {
+            font-size: 14px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .footer-nav a:hover {
+            opacity: 1;
+            color: #f5a623;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+            opacity: 0.5;
+        }
+
+        /* ========================================
+           レスポンシブ
+           ======================================== */
+        @media (max-width: 900px) {
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 26, 46, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .header-nav.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .privacy-hero {
+                padding: 110px 15px 50px;
+            }
+
+            .privacy-hero h1 {
+                font-size: 22px;
+            }
+
+            .privacy-content {
+                padding: 40px 15px 60px;
+            }
+
+            .privacy-section h2 {
+                font-size: 18px;
+            }
+
+            .privacy-info-row {
+                grid-template-columns: 1fr;
+                gap: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================
+         共通ヘッダー
+         ======================================== -->
+    <header class="site-header">
+        <a href="index.html" class="header-logo">
+            <img src="photos/logo.webp" alt="福岡眼鏡加工センター">
+        </a>
+        <nav class="header-nav" id="headerNav">
+            <a href="business.html">業者の方</a>
+            <a href="customer.html">一般のお客様</a>
+            <a href="about.html">職人紹介</a>
+            <a href="contact.html">お問い合わせ</a>
+            <a href="tel:090-2712-2040" class="header-phone">090-2712-2040</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- ========================================
+         ヒーロー
+         ======================================== -->
+    <div class="privacy-hero">
+        <h1>プライバシーポリシー</h1>
+    </div>
+
+    <!-- ========================================
+         本文
+         ======================================== -->
+    <div class="privacy-content">
+
+        <div class="privacy-section">
+            <p>福岡眼鏡加工センター（以下「当工房」）は、お客様からお預かりする個人情報を適切に取り扱うことが重要であると考えています。以下のとおり、個人情報の取り扱いについて定めます。</p>
+        </div>
+
+        <!-- 1. 事業者情報 -->
+        <div class="privacy-section">
+            <h2>1. 事業者情報</h2>
+            <div class="privacy-info-table">
+                <div class="privacy-info-row">
+                    <div class="privacy-info-label">屋号</div>
+                    <div class="privacy-info-value">福岡眼鏡加工センター</div>
+                </div>
+                <div class="privacy-info-row">
+                    <div class="privacy-info-label">所在地</div>
+                    <div class="privacy-info-value">〒815-0032 福岡県福岡市南区向新町1丁目3-17 リバーピア大橋301</div>
+                </div>
+                <div class="privacy-info-row">
+                    <div class="privacy-info-label">電話番号</div>
+                    <div class="privacy-info-value">090-2712-2040</div>
+                </div>
+                <div class="privacy-info-row">
+                    <div class="privacy-info-label">営業時間</div>
+                    <div class="privacy-info-value">平日 9:00〜17:00（土日祝休み）</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. 取得する個人情報 -->
+        <div class="privacy-section">
+            <h2>2. 取得する個人情報</h2>
+            <p>当工房では、お問い合わせやサービスのご利用にあたり、以下の情報をお預かりすることがあります。</p>
+            <ul>
+                <li>お名前</li>
+                <li>お電話番号</li>
+                <li>メールアドレス</li>
+                <li>お客様区分（業者様 / 一般のお客様）</li>
+                <li>ご希望の内容（調整・レンズ交換・修理等）</li>
+                <li>フレーム種類・希望納期</li>
+                <li>お問い合わせ内容（自由記述）</li>
+                <li>メールに添付された写真（任意でお送りいただいた場合）</li>
+            </ul>
+        </div>
+
+        <!-- 3. 利用目的 -->
+        <div class="privacy-section">
+            <h2>3. 利用目的</h2>
+            <p>お預かりした個人情報は、以下の目的でのみ利用します。</p>
+            <ul>
+                <li>お問い合わせへの回答・ご連絡</li>
+                <li>お見積りの作成・ご案内</li>
+                <li>加工・修理サービスの提供</li>
+                <li>サービス品質の向上</li>
+            </ul>
+            <p>上記以外の目的で利用する場合は、あらかじめお客様の同意をいただきます。</p>
+        </div>
+
+        <!-- 4. 第三者への提供 -->
+        <div class="privacy-section">
+            <h2>4. 第三者への提供</h2>
+            <p>当工房は、以下の場合を除き、お客様の個人情報を第三者に提供することはありません。</p>
+            <ul>
+                <li>お客様の同意がある場合</li>
+                <li>法令に基づき開示が求められる場合</li>
+                <li>人の生命・身体・財産の保護のために必要な場合</li>
+            </ul>
+        </div>
+
+        <!-- 5. 外部サービスの利用 -->
+        <div class="privacy-section">
+            <h2>5. 外部サービスの利用</h2>
+            <p>お問い合わせフォームの送信処理に、外部のフォームサービス（Formspree、Googleフォーム等）を利用する場合があります。この場合、送信データは当該サービスの利用規約・プライバシーポリシーに基づいて取り扱われます。</p>
+            <p>また、当サイトではアクセス情報の表示にGoogle Mapsを利用しています。Google Mapsの利用に際しては、Googleのプライバシーポリシーが適用されます。</p>
+        </div>
+
+        <!-- 6. 保管と破棄 -->
+        <div class="privacy-section">
+            <h2>6. 保管と破棄</h2>
+            <p>お預かりした個人情報は、お問い合わせ対応やサービス提供に必要な期間保管し、その後適切に破棄します。</p>
+            <p>メールで受信した写真についても同様に、対応完了後に適切な時期に削除します。</p>
+        </div>
+
+        <!-- 7. 開示・訂正・削除 -->
+        <div class="privacy-section">
+            <h2>7. 開示・訂正・削除のご請求</h2>
+            <p>ご本人から、個人情報の開示・訂正・削除をご希望される場合は、お電話またはメールにてご連絡ください。ご本人確認の上、対応いたします。</p>
+            <p>連絡先：090-2712-2040（平日 9:00〜17:00）</p>
+        </div>
+
+        <!-- 8. 免責事項 -->
+        <div class="privacy-section">
+            <h2>8. 免責事項</h2>
+            <ul>
+                <li>メールやフォームによる通信は、インターネット経路上の完全な安全性を保証するものではありません。機密性の高い情報は、お電話でのやりとりをお勧めします。</li>
+                <li>メールに添付いただいた写真は、お見積り・加工の参考としてのみ使用し、目的外の使用はいたしません。</li>
+                <li>当サイトからリンクする外部サイトにおける個人情報の取り扱いについては、当工房は責任を負いかねます。</li>
+            </ul>
+        </div>
+
+        <!-- 9. 改定 -->
+        <div class="privacy-section">
+            <h2>9. ポリシーの改定</h2>
+            <p>本ポリシーは、法令の変更やサービス内容の変更に伴い、必要に応じて更新することがあります。最新の内容は常にこのページに掲載します。</p>
+        </div>
+
+        <div class="privacy-date">
+            <p>制定日：2026年2月22日</p>
+        </div>
+
+    </div>
+
+    <!-- ========================================
+         共通フッター
+         ======================================== -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h4>福岡眼鏡加工センター</h4>
+                <p>
+                    〒815-0032<br>
+                    福岡市南区向新町1丁目3-17<br>
+                    リバーピア大橋301<br>
+                    <br>
+                    Tel: 090-2712-2040<br>
+                    営業時間：平日 9:00〜17:00
+                </p>
+            </div>
+            <div class="footer-nav">
+                <h4>サイトメニュー</h4>
+                <ul>
+                    <li><a href="index.html">トップページ</a></li>
+                    <li><a href="business.html">業者の方</a></li>
+                    <li><a href="customer.html">一般のお客様</a></li>
+                    <li><a href="about.html">職人紹介</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>その他</h4>
+                <ul>
+                    <li><a href="privacy.html">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 福岡眼鏡加工センター — 眼鏡加工一筋50年</p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JavaScript
+         ======================================== -->
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('headerNav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | 福岡眼鏡加工センター</title>
+    <meta name="description" content="福岡眼鏡加工センターへのお問い合わせ。まずはお電話ください。090-2712-2040（平日9:00〜17:00）。職人が直接対応します。">
+    <style>
+        /* ========================================
+           共通リセット・ベース
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",
+                         "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+                         "メイリオ", Meiryo, sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ========================================
+           共通ヘッダー
+           ======================================== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 26, 46, 0.95);
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo img {
+            height: 40px;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header-nav a {
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .header-nav a:hover {
+            color: #f5a623;
+        }
+
+        .header-nav a.current {
+            color: #f5a623;
+        }
+
+        .header-phone {
+            color: #f5a623;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: #fff;
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ========================================
+           共通ボタン
+           ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #e85a3a;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #d14a2a;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-dark {
+            background: transparent;
+            color: #1a2a4a;
+            border: 2px solid #1a2a4a;
+        }
+
+        .btn-outline-dark:hover {
+            background: #1a2a4a;
+            color: #fff;
+        }
+
+        /* ========================================
+           セクション共通
+           ======================================== */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* ========================================
+           ① 電話CTA（最優先）
+           ======================================== */
+        .phone-section {
+            background: linear-gradient(135deg, #1a2a4a 0%, #0f1a2e 100%);
+            color: #fff;
+            text-align: center;
+            padding: 140px 20px 80px;
+        }
+
+        .phone-section h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .phone-sub {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .phone-number {
+            font-size: 52px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .phone-number a {
+            color: #fff;
+        }
+
+        .phone-hours {
+            font-size: 15px;
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+
+        .phone-direct {
+            display: inline-block;
+            background: rgba(245,166,35,0.2);
+            border: 1px solid rgba(245,166,35,0.5);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            color: #f5a623;
+            margin-bottom: 25px;
+        }
+
+        .phone-btn {
+            display: inline-block;
+            background: #e85a3a;
+            color: #fff;
+            padding: 20px 60px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .phone-btn:hover {
+            background: #d14a2a;
+            transform: translateY(-2px);
+        }
+
+        /* ========================================
+           電話が早い理由
+           ======================================== */
+        .why-phone {
+            background: #fff;
+            padding: 50px 20px;
+        }
+
+        .why-phone-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .why-phone-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .why-phone-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .why-phone-item h3 {
+            font-size: 15px;
+            color: #1a2a4a;
+            margin-bottom: 6px;
+        }
+
+        .why-phone-item p {
+            font-size: 13px;
+            color: #999;
+        }
+
+        /* ========================================
+           来店案内（短縮版）
+           ======================================== */
+        .visit-notice {
+            background: #fef6f3;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .visit-notice p {
+            font-size: 15px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .visit-notice strong {
+            color: #e85a3a;
+        }
+
+        /* ========================================
+           ② フォーム
+           ======================================== */
+        .form-section {
+            background: #f8f9fa;
+        }
+
+        .form-section .section-title {
+            margin-bottom: 15px;
+        }
+
+        .form-sub {
+            text-align: center;
+            font-size: 15px;
+            color: #888;
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-required {
+            color: #e85a3a;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        .form-privacy {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .form-privacy input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            accent-color: #e85a3a;
+        }
+
+        .form-privacy label {
+            font-size: 14px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .form-privacy a {
+            color: #e85a3a;
+            text-decoration: underline;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 18px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #1a2a4a;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .form-submit:hover {
+            background: #2d3e5f;
+            transform: translateY(-2px);
+        }
+
+        .form-submit:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ========================================
+           フレーム種類ガイド
+           ======================================== */
+        .frame-guide {
+            background: #fff;
+            padding: 60px 20px;
+        }
+
+        .frame-guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .frame-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 28px 22px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .frame-card:hover {
+            border-color: #e85a3a;
+        }
+
+        .frame-card-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .frame-card h3 {
+            font-size: 16px;
+            color: #1a2a4a;
+            margin-bottom: 6px;
+        }
+
+        .frame-card p {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           写真ガイド
+           ======================================== */
+        .photo-guide {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+
+        .photo-guide-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .photo-guide-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 22px 14px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .photo-guide-num {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            background: #1a2a4a;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .photo-guide-item h4 {
+            font-size: 14px;
+            color: #1a2a4a;
+            margin-bottom: 4px;
+        }
+
+        .photo-guide-item p {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .photo-guide-note {
+            text-align: center;
+            max-width: 600px;
+            margin: 20px auto 0;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* ========================================
+           信頼バッジ
+           ======================================== */
+        .trust-badges {
+            background: #fff;
+            padding: 30px 20px;
+        }
+
+        .trust-badges-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #1a2a4a;
+            font-weight: bold;
+        }
+
+        .trust-badge-icon {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #f5a623;
+            border-radius: 50%;
+        }
+
+        /* ========================================
+           ③ 共通注記
+           ======================================== */
+        .notes-section {
+            background: #fff;
+            padding: 50px 20px;
+        }
+
+        .notes-box {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 25px 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #f5a623;
+        }
+
+        .notes-box h3 {
+            font-size: 16px;
+            color: #1a2a4a;
+            margin-bottom: 15px;
+        }
+
+        .notes-box p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .notes-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ========================================
+           ④ アクセス
+           ======================================== */
+        .access-section {
+            background: #f8f9fa;
+        }
+
+        .access-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .access-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .access-info p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        .access-map {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .access-map iframe {
+            width: 100%;
+            height: 350px;
+            border: 0;
+            display: block;
+        }
+
+        /* ========================================
+           共通フッター
+           ======================================== */
+        .site-footer {
+            background: #0f1a2e;
+            color: #fff;
+            padding: 50px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #f5a623;
+        }
+
+        .footer-info p {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 2;
+        }
+
+        .footer-nav h4 {
+            font-size: 14px;
+            color: #f5a623;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-bottom: 8px;
+        }
+
+        .footer-nav a {
+            font-size: 14px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .footer-nav a:hover {
+            opacity: 1;
+            color: #f5a623;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+            opacity: 0.5;
+        }
+
+        /* ========================================
+           レスポンシブ
+           ======================================== */
+        @media (max-width: 900px) {
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 26, 46, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .header-nav.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .why-phone-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .frame-guide-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .photo-guide-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 50px 15px;
+            }
+
+            .section-title {
+                font-size: 22px;
+                margin-bottom: 30px;
+            }
+
+            .phone-section {
+                padding: 110px 15px 60px;
+            }
+
+            .phone-section h1 {
+                font-size: 22px;
+            }
+
+            .phone-number {
+                font-size: 32px;
+            }
+
+            .phone-btn {
+                display: block;
+                font-size: 18px;
+                padding: 18px 40px;
+            }
+
+            .contact-form {
+                padding: 25px 20px;
+            }
+
+            .access-map iframe {
+                height: 250px;
+            }
+
+            .btn {
+                display: block;
+                text-align: center;
+                margin: 10px 0;
+                padding: 15px 30px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================
+         共通ヘッダー
+         ======================================== -->
+    <header class="site-header">
+        <a href="index.html" class="header-logo">
+            <img src="photos/logo.webp" alt="福岡眼鏡加工センター">
+        </a>
+        <nav class="header-nav" id="headerNav">
+            <a href="business.html">業者の方</a>
+            <a href="customer.html">一般のお客様</a>
+            <a href="about.html">職人紹介</a>
+            <a href="contact.html" class="current">お問い合わせ</a>
+            <a href="tel:090-2712-2040" class="header-phone">090-2712-2040</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- ========================================
+         ① 電話CTA（最優先）
+         ======================================== -->
+    <section class="phone-section">
+        <div class="container">
+            <h1>まずはお電話ください</h1>
+            <p class="phone-sub">職人が直接お話を伺います</p>
+            <p class="phone-number"><a href="tel:090-2712-2040">090-2712-2040</a></p>
+            <p class="phone-hours">受付時間：平日 9:00〜17:00</p>
+            <p class="phone-direct">職人直通</p>
+            <a href="tel:090-2712-2040" class="phone-btn">今すぐお電話</a>
+        </div>
+    </section>
+
+    <!-- 電話が早い理由 -->
+    <div class="why-phone">
+        <div class="why-phone-grid">
+            <div class="why-phone-item">
+                <div class="why-phone-icon">&#9201;</div>
+                <h3>その場でお見積り</h3>
+                <p>状態をお伺いして<br>すぐに概算をお伝えできます</p>
+            </div>
+            <div class="why-phone-item">
+                <div class="why-phone-icon">&#128172;</div>
+                <h3>細かいご要望も伝わる</h3>
+                <p>文章では伝えにくい内容も<br>お話しながら確認できます</p>
+            </div>
+            <div class="why-phone-item">
+                <div class="why-phone-icon">&#128197;</div>
+                <h3>日程調整がスムーズ</h3>
+                <p>来店・郵送の段取りを<br>その場で決められます</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 来店案内 -->
+    <div class="visit-notice">
+        <p>ご来店をお考えの方は、<strong>事前にお電話でご相談ください</strong>。<br>メガネの状態をお伺いした上で、ご来店の日程を調整いたします。</p>
+    </div>
+
+    <!-- ========================================
+         ② お問い合わせフォーム
+         ======================================== -->
+    <section class="form-section">
+        <div class="container">
+            <h2 class="section-title">お問い合わせフォーム</h2>
+            <p class="form-sub">お急ぎの場合はお電話ください。<br>営業時間外・電話が難しい方はフォームをご利用ください。</p>
+
+            <div class="contact-form">
+                <!-- フォームで聞く内容の案内 -->
+                <div style="text-align:center; margin-bottom:30px;">
+                    <p style="font-size:15px; color:#666;">以下の内容をフォームでお伺いします。<br>わかる範囲で構いません。</p>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:30px;">
+                    <div style="background:#f8f9fa; padding:14px 18px; border-radius:8px; font-size:14px;">
+                        <strong style="color:#1a2a4a;">1.</strong> お客様区分<br><span style="font-size:12px; color:#888;">業者 / 一般</span>
+                    </div>
+                    <div style="background:#f8f9fa; padding:14px 18px; border-radius:8px; font-size:14px;">
+                        <strong style="color:#1a2a4a;">2.</strong> ご希望<br><span style="font-size:12px; color:#888;">調整 / レンズ交換 / 修理 / レンズ加工外注 / 見積り / その他</span>
+                    </div>
+                    <div style="background:#f8f9fa; padding:14px 18px; border-radius:8px; font-size:14px;">
+                        <strong style="color:#1a2a4a;">3.</strong> フレーム種類<br><span style="font-size:12px; color:#888;">標準 / ナイロール / 縁なし / 特殊素材 / 不明</span>
+                    </div>
+                    <div style="background:#f8f9fa; padding:14px 18px; border-radius:8px; font-size:14px;">
+                        <strong style="color:#1a2a4a;">4.</strong> 希望納期<br><span style="font-size:12px; color:#888;">急ぎ / 通常 / ゆったり / 相談したい</span>
+                    </div>
+                    <div style="background:#f8f9fa; padding:14px 18px; border-radius:8px; font-size:14px;">
+                        <strong style="color:#1a2a4a;">5.</strong> お名前
+                    </div>
+                    <div style="background:#f8f9fa; padding:14px 18px; border-radius:8px; font-size:14px;">
+                        <strong style="color:#1a2a4a;">6.</strong> 電話番号<span style="color:#e85a3a; font-size:11px; margin-left:4px;">必須</span>
+                    </div>
+                    <div style="background:#f8f9fa; padding:14px 18px; border-radius:8px; font-size:14px;">
+                        <strong style="color:#1a2a4a;">7.</strong> メールアドレス
+                    </div>
+                    <div style="background:#f8f9fa; padding:14px 18px; border-radius:8px; font-size:14px;">
+                        <strong style="color:#1a2a4a;">8.</strong> お問い合わせ内容<br><span style="font-size:12px; color:#888;">自由記述</span>
+                    </div>
+                    <div style="background:#f8f9fa; padding:14px 18px; border-radius:8px; font-size:14px; grid-column:1/-1; border-left:3px solid #f5a623;">
+                        <strong style="color:#1a2a4a;">9.</strong> 写真（任意）<br><span style="font-size:12px; color:#888;">フォーム送信後に表示される案内に従い、メールで写真をお送りください。お電話でもご案内いたします。</span>
+                    </div>
+                </div>
+
+                <!-- Googleフォームボタン -->
+                <div style="text-align:center;">
+                    <a href="https://docs.google.com/forms/d/1fBlUYHvgzpO-o3dI66TmJuOTrmZVCIRikW69lFVkYxg/viewform" target="_blank" rel="noopener" class="form-submit" style="display:inline-block; text-decoration:none; max-width:480px;">Googleフォームで問い合わせる（24時間受付）</a>
+                </div>
+
+                <!-- 送信後案内 -->
+                <p style="margin-top:16px; font-size:13px; color:#999; text-align:center; line-height:1.7;">送信後、自動返信メールが届く場合があります。<br>写真がある方は返信メールに添付して送ってください。</p>
+
+                <div class="form-privacy" style="margin-top:20px; margin-bottom:0;">
+                    <label style="font-size:13px;">フォーム送信により<a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意したものとみなします。</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         フレーム種類の見分け方
+         ======================================== -->
+    <section class="frame-guide">
+        <div class="container">
+            <h2 class="section-title">フレーム種類の見分け方</h2>
+            <div class="frame-guide-grid">
+                <div class="frame-card">
+                    <div class="frame-card-icon">&#128083;</div>
+                    <h3>標準（フルリム）</h3>
+                    <p>レンズ全周をフレームが<br>囲んでいるタイプ。<br>もっとも一般的な形状です。</p>
+                </div>
+                <div class="frame-card">
+                    <div class="frame-card-icon">&#127856;</div>
+                    <h3>ナイロール（半フチ）</h3>
+                    <p>レンズの下半分が<br>細い糸（ナイロン）で<br>留まっているタイプ。</p>
+                </div>
+                <div class="frame-card">
+                    <div class="frame-card-icon">&#10024;</div>
+                    <h3>縁なし（ツーポイント）</h3>
+                    <p>フチがなく、レンズに<br>直接ネジで留めるタイプ。<br>加工の難易度が高い形状です。</p>
+                </div>
+            </div>
+            <p style="text-align:center; font-size:13px; color:#999; margin-top:20px;">不明でもOK ─ 写真があればこちらで判断できます</p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         写真の撮り方ガイド
+         ======================================== -->
+    <section class="photo-guide">
+        <div class="container">
+            <h2 class="section-title">写真の撮り方（4カット）</h2>
+            <div class="photo-guide-grid">
+                <div class="photo-guide-item">
+                    <span class="photo-guide-num">1</span>
+                    <h4>正面から全体</h4>
+                    <p>フレーム全体が<br>写るように</p>
+                </div>
+                <div class="photo-guide-item">
+                    <span class="photo-guide-num">2</span>
+                    <h4>横から</h4>
+                    <p>テンプル（つる）の<br>状態がわかるように</p>
+                </div>
+                <div class="photo-guide-item">
+                    <span class="photo-guide-num">3</span>
+                    <h4>破損部アップ</h4>
+                    <p>壊れた箇所・<br>気になる箇所を接写</p>
+                </div>
+                <div class="photo-guide-item">
+                    <span class="photo-guide-num">4</span>
+                    <h4>レンズ刻印</h4>
+                    <p>レンズに小さな<br>文字があれば撮影</p>
+                </div>
+            </div>
+            <p class="photo-guide-note">写真は任意です。フォーム送信後、メールで添付してお送りください。<br>お電話でもご案内いたします。</p>
+        </div>
+    </section>
+
+    <!-- 信頼バッジ -->
+    <div class="trust-badges">
+        <div class="trust-badges-row">
+            <span class="trust-badge"><span class="trust-badge-icon"></span>創業1976年</span>
+            <span class="trust-badge"><span class="trust-badge-icon"></span>加工実績10万本超</span>
+            <span class="trust-badge"><span class="trust-badge-icon"></span>他店購入メガネOK</span>
+            <span class="trust-badge"><span class="trust-badge-icon"></span>職人が直接対応</span>
+        </div>
+    </div>
+
+    <!-- ========================================
+         ③ 共通注記
+         ======================================== -->
+    <div class="notes-section">
+        <div class="notes-box">
+            <h3>料金に関するご案内</h3>
+            <p>※ 表示価格は目安です。状態確認後に正式なお見積りをお伝えします。</p>
+            <p>※ レンズ代は加工料とは別途です。</p>
+            <p>※ 修理不可の場合は作業料をいただきません（郵送の返送料はご負担ください）。</p>
+            <p>※ お見積り後のキャンセルは無料です（作業着手前）。</p>
+        </div>
+    </div>
+
+    <!-- ========================================
+         ④ アクセス
+         ======================================== -->
+    <section class="access-section">
+        <div class="access-content">
+            <h2 class="section-title">アクセス</h2>
+            <div class="access-info">
+                <p>福岡市南区向新町1丁目3-17 リバーピア大橋301</p>
+                <p style="font-size:13px; color:#999; margin-top:5px;">※ ご来店の際は事前にお電話ください</p>
+            </div>
+            <div class="access-map">
+                <!-- ★ Googleマップで住所検索→「共有」→「地図を埋め込む」のHTMLで差し替え推奨 ★ -->
+                <iframe
+                    src="https://maps.google.com/maps?q=%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%97%E5%8C%BA%E5%90%91%E6%96%B0%E7%94%BA1%E4%B8%81%E7%9B%AE3-17+%E3%83%AA%E3%83%90%E3%83%BC%E3%83%94%E3%82%A2%E5%A4%A7%E6%A9%8B&t=m&z=16&output=embed&hl=ja"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="福岡眼鏡加工センター アクセスマップ">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         共通フッター
+         ======================================== -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h4>福岡眼鏡加工センター</h4>
+                <p>
+                    〒815-0032<br>
+                    福岡市南区向新町1丁目3-17<br>
+                    リバーピア大橋301<br>
+                    <br>
+                    Tel: 090-2712-2040<br>
+                    営業時間：平日 9:00〜17:00
+                </p>
+            </div>
+            <div class="footer-nav">
+                <h4>サイトメニュー</h4>
+                <ul>
+                    <li><a href="index.html">トップページ</a></li>
+                    <li><a href="business.html">業者の方</a></li>
+                    <li><a href="customer.html">一般のお客様</a></li>
+                    <li><a href="about.html">職人紹介</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>その他</h4>
+                <ul>
+                    <li><a href="privacy.html">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 福岡眼鏡加工センター — 眼鏡加工一筋50年</p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JavaScript
+         ======================================== -->
+    <script>
+        // ハンバーガーメニュー
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('headerNav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
