@@ -140,7 +140,8 @@
             right: 0;
             bottom: 0;
             background: url('photos/hero.webp') center center / cover;
-            opacity: 0.3;
+            opacity: 0.12;
+            filter: blur(2px);
         }
 
         .hero-content {
@@ -149,32 +150,43 @@
             text-align: center;
             color: #fff;
             padding: 40px 20px;
+            max-width: 720px;
+            margin: 0 auto;
         }
 
         .hero-logo {
-            max-width: 380px;
-            width: 80%;
+            max-width: 340px;
+            width: 70%;
             margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: 38px;
+            font-size: 44px;
             font-weight: bold;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        .hero-role {
+            font-size: 15px;
+            opacity: 0.85;
+            margin-bottom: 20px;
+            letter-spacing: 0.1em;
         }
 
         .hero-subtitle {
-            font-size: 16px;
-            opacity: 0.85;
+            font-size: 14px;
+            opacity: 0.08;
             margin-bottom: 8px;
         }
 
         .hero-position {
-            font-size: 15px;
+            font-size: 14px;
             color: #f5a623;
             margin-bottom: 25px;
             font-weight: bold;
+            opacity: 0.9;
         }
 
         .hero-phone {
@@ -565,7 +577,7 @@
             }
 
             .hero h1 {
-                font-size: 28px;
+                font-size: 32px;
             }
 
             .hero-phone {
@@ -610,11 +622,11 @@
             }
 
             .hero h1 {
-                font-size: 24px;
+                font-size: 26px;
             }
 
             .hero-logo {
-                max-width: 260px;
+                max-width: 240px;
             }
 
             .hero-phone {
@@ -685,11 +697,11 @@
         <div class="hero-content">
             <img src="photos/logo.webp" alt="福岡眼鏡加工センター" class="hero-logo" fetchpriority="high" decoding="async">
             <h1>福岡眼鏡加工センター</h1>
-            <p class="hero-subtitle">Professional Optical Craft — Since 1976</p>
-            <p class="hero-position">販売店ではありません。眼鏡加工・修理の専門工房です。</p>
+            <p class="hero-role">眼鏡の加工・修理専門工房</p>
             <p class="hero-phone"><a href="tel:090-2712-2040">090-2712-2040</a></p>
             <p class="hero-hours">受付時間：平日 9:00〜17:00</p>
             <p class="hero-direct">職人が直接対応します</p>
+            <p class="hero-position">販売店ではありません。加工・修理の専門工房です。</p>
             <p class="hero-catchcopy">加工歴50年・累計10万本の実績<br>「他店で断られた難加工」お任せください</p>
             <div>
                 <a href="business.html" class="btn btn-gold">眼鏡店・業者の方</a>
