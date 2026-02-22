@@ -813,6 +813,7 @@
             <img src="photos/logo.webp" alt="福岡眼鏡加工センター">
         </a>
         <nav class="header-nav" id="headerNav">
+            <a href="pricing.html">加工料金</a>
             <a href="business.html">業者の方</a>
             <a href="customer.html" class="current">一般のお客様</a>
             <a href="about.html">職人紹介</a>
@@ -886,130 +887,35 @@
     </section>
 
     <!-- ========================================
-         ③ サービスメニュー（カードUI）
+         ③ 料金のご案内（pricing.html へ誘導）
          ======================================== -->
     <section class="menu-section">
         <div class="container">
             <h2 class="section-title">サービス・料金のご案内</h2>
 
-            <!-- A. 調整 -->
-            <div class="menu-category menu-category--a">
-                <div class="menu-category-title">A. 調整・軽作業</div>
-                <div class="menu-cards">
-                    <div class="menu-card">
-                        <div>
-                            <p class="menu-card-name">基本調整（フィッティング）</p>
-                            <p class="menu-card-note">掛け心地・ネジ締め・ノーズパッド調整</p>
-                        </div>
-                        <p class="menu-card-price">1,100円〜</p>
-                    </div>
-                    <div class="menu-card">
-                        <div>
-                            <p class="menu-card-name">歪み直し（軽度）</p>
-                            <p class="menu-card-note">フレームの曲がり修正</p>
-                        </div>
-                        <p class="menu-card-price">2,200円〜</p>
-                    </div>
-                    <div class="menu-card">
-                        <div>
-                            <p class="menu-card-name">歪み直し（強め/分解調整含む）</p>
-                            <p class="menu-card-note">大きな歪み・分解しての調整</p>
-                        </div>
-                        <p class="menu-card-price">3,300円〜</p>
-                    </div>
-                    <div class="menu-card">
-                        <div>
-                            <p class="menu-card-name">鼻パッド交換</p>
-                            <p class="menu-card-note">部品込み（特殊パッドは別途）</p>
-                        </div>
-                        <p class="menu-card-price">1,100円〜</p>
-                    </div>
-                    <div class="menu-card">
-                        <div>
-                            <p class="menu-card-name">ネジ交換・締め直し</p>
-                            <p class="menu-card-note">単体でのご依頼</p>
-                        </div>
-                        <p class="menu-card-price">550円〜</p>
-                    </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                <div style="background: #f8f9fa; border-radius: 12px; padding: 24px; text-align: center;">
+                    <p style="font-size: 14px; color: #666; margin-bottom: 4px;">調整・フィッティング</p>
+                    <p style="font-size: 24px; font-weight: bold; color: #0f1a2e;">1,100円〜</p>
+                </div>
+                <div style="background: #f8f9fa; border-radius: 12px; padding: 24px; text-align: center;">
+                    <p style="font-size: 14px; color: #666; margin-bottom: 4px;">レンズ交換（加工料）</p>
+                    <p style="font-size: 24px; font-weight: bold; color: #0f1a2e;">2,200円〜</p>
+                </div>
+                <div style="background: #f8f9fa; border-radius: 12px; padding: 24px; text-align: center;">
+                    <p style="font-size: 14px; color: #666; margin-bottom: 4px;">修理</p>
+                    <p style="font-size: 24px; font-weight: bold; color: #0f1a2e;">2,200円〜</p>
                 </div>
             </div>
 
-            <!-- B. レンズ交換 -->
-            <div class="menu-category menu-category--b">
-                <div class="menu-category-title">B. レンズ交換（加工料 / レンズ代別途）</div>
-                <div class="menu-cards">
-                    <div class="menu-card">
-                        <div>
-                            <p class="menu-card-name">レンズ交換（標準フレーム）</p>
-                            <p class="menu-card-note">メタル・セルフレーム</p>
-                        </div>
-                        <p class="menu-card-price">2,200円〜</p>
-                    </div>
-                    <div class="menu-card">
-                        <div>
-                            <p class="menu-card-name">レンズ交換（ナイロール）</p>
-                            <p class="menu-card-note">溝掘り加工が必要なフレーム</p>
-                        </div>
-                        <p class="menu-card-price">2,750円〜</p>
-                    </div>
-                    <div class="menu-card">
-                        <div>
-                            <p class="menu-card-name">レンズ交換（縁なし・2ポイント）</p>
-                            <p class="menu-card-note">穴あけ加工が必要なフレーム</p>
-                        </div>
-                        <p class="menu-card-price">4,950円〜</p>
-                    </div>
-                    <div class="menu-card">
-                        <div>
-                            <p class="menu-card-name">特殊加工</p>
-                            <p class="menu-card-note">高カーブ・特殊素材等</p>
-                        </div>
-                        <p class="menu-card-price estimate">要見積り</p>
-                    </div>
-                </div>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <a href="pricing.html" style="display: inline-block; background: #c0392b; color: #fff; padding: 16px 48px; border-radius: 8px; font-size: 18px; font-weight: bold; transition: background 0.3s;">加工料金の詳細を見る</a>
             </div>
 
-            <!-- C. 修理 -->
-            <div class="menu-category menu-category--c">
-                <div class="menu-category-title">C. 修理</div>
-                <div class="menu-cards">
-                    <div class="menu-card">
-                        <div>
-                            <p class="menu-card-name">丁番（ヒンジ）ゆるみ・調整</p>
-                            <p class="menu-card-note">開閉部分の調整</p>
-                        </div>
-                        <p class="menu-card-price">2,200円〜</p>
-                    </div>
-                    <div class="menu-card">
-                        <div>
-                            <p class="menu-card-name">丁番交換・ロー付け等</p>
-                            <p class="menu-card-note">溶接・交換が必要な場合</p>
-                        </div>
-                        <p class="menu-card-price estimate">5,500円〜 要見積</p>
-                    </div>
-                    <div class="menu-card">
-                        <div>
-                            <p class="menu-card-name">テンプル折れ・ブリッジ修理</p>
-                            <p class="menu-card-note">つる・ブリッジの破損</p>
-                        </div>
-                        <p class="menu-card-price estimate">5,500円〜 要見積</p>
-                    </div>
-                    <div class="menu-card">
-                        <div>
-                            <p class="menu-card-name">他店お断り案件</p>
-                            <p class="menu-card-note">まずはお電話でご相談ください</p>
-                        </div>
-                        <p class="menu-card-price estimate">要見積り</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 共通注記 -->
             <div class="menu-note">
-                <p>※ 表示価格は目安です。状態確認後に正式なお見積りをお伝えします。</p>
-                <p>※ レンズ代は加工料とは別途かかります。レンズ持込OK・当店でのご用意も可能です。</p>
-                <p>※ 修理不可の場合は作業料をいただきません（郵送の返送料はご負担ください）。</p>
-                <p>※ お見積り後のキャンセルは無料です（作業着手前）。</p>
+                <p>※ 表示価格は目安です。お電話で状態をお聞きし、正式なお見積りをお伝えします。</p>
+                <p>※ レンズ代は加工料とは別途です。レンズ持込OK・当店でのご用意も可能です。</p>
+                <p>※ お見積り後のキャンセルは無料です。</p>
             </div>
         </div>
     </section>
@@ -1185,6 +1091,7 @@
                 <h4>サイトメニュー</h4>
                 <ul>
                     <li><a href="index.html">トップページ</a></li>
+                    <li><a href="pricing.html">加工料金</a></li>
                     <li><a href="business.html">業者の方</a></li>
                     <li><a href="customer.html">一般のお客様</a></li>
                     <li><a href="about.html">職人紹介</a></li>
