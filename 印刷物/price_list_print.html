@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>加工料金一覧表 | 福岡眼鏡加工センター</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 10mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Yu Gothic", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+    color: #1a2a4a;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 290mm;
+    margin: 0 auto;
+    padding: 10mm;
+  }
+
+  /* ── ヘッダー ── */
+  .header {
+    text-align: center;
+    margin-bottom: 6mm;
+    padding-bottom: 4mm;
+    border-bottom: 3px solid #1a2a4a;
+  }
+
+  .header h1 {
+    font-size: 28pt;
+    font-weight: 900;
+    letter-spacing: .08em;
+    color: #1a2a4a;
+    margin-bottom: 2mm;
+  }
+
+  .header-sub {
+    font-size: 11pt;
+    color: #666;
+    letter-spacing: .05em;
+  }
+
+  .header-badges {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 3mm;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 14px;
+    border-radius: 20px;
+    font-size: 9pt;
+    font-weight: 700;
+    border: 1.5px solid #e85a3a;
+    color: #e85a3a;
+  }
+
+  /* ── カテゴリ ── */
+  .category {
+    margin-bottom: 5mm;
+  }
+
+  .category-title {
+    font-size: 13pt;
+    font-weight: 800;
+    padding: 3mm 4mm;
+    border-radius: 4px;
+    margin-bottom: 2mm;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .category-title .label-tag {
+    display: inline-block;
+    font-size: 10pt;
+    font-weight: 900;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 4px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .cat-a .category-title { background: #eef4ff; color: #1a2a4a; }
+  .cat-a .label-tag { background: #1a2a4a; }
+
+  .cat-b .category-title { background: #fef2ef; color: #c0392b; }
+  .cat-b .label-tag { background: #e85a3a; }
+
+  .cat-c .category-title { background: #f7f2eb; color: #7d5a0b; }
+  .cat-c .label-tag { background: #c49a2a; }
+
+  /* ── 料金テーブル ── */
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10.5pt;
+    margin-bottom: 2mm;
+  }
+
+  .price-table th {
+    background: #f4f6f9;
+    font-weight: 700;
+    font-size: 9pt;
+    padding: 2.5mm 3mm;
+    text-align: left;
+    border-bottom: 1.5px solid #ccc;
+    color: #555;
+  }
+
+  .price-table th:last-child {
+    text-align: right;
+    width: 95px;
+  }
+
+  .price-table td {
+    padding: 3mm 3mm;
+    border-bottom: 1px solid #e8e8e8;
+    vertical-align: top;
+  }
+
+  .price-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .item-name {
+    font-weight: 700;
+    color: #1a2a4a;
+  }
+
+  .item-note {
+    font-size: 9pt;
+    color: #888;
+    margin-top: 1px;
+  }
+
+  .item-price {
+    text-align: right;
+    font-weight: 800;
+    font-size: 12pt;
+    color: #e85a3a;
+    white-space: nowrap;
+  }
+
+  .item-price.estimate {
+    font-size: 10pt;
+    color: #999;
+    font-weight: 600;
+  }
+
+  /* ── 注意書き ── */
+  .notes {
+    margin-top: 4mm;
+    padding: 3mm 4mm;
+    background: #f9f9f6;
+    border-left: 3px solid #f5a623;
+    border-radius: 3px;
+  }
+
+  .notes p {
+    font-size: 8.5pt;
+    color: #666;
+    line-height: 1.8;
+  }
+
+  /* ── フッター ── */
+  .footer {
+    margin-top: 5mm;
+    padding-top: 4mm;
+    border-top: 2px solid #1a2a4a;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .footer-left {
+    font-size: 9pt;
+    color: #666;
+    line-height: 1.7;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-phone {
+    font-size: 22pt;
+    font-weight: 900;
+    color: #1a2a4a;
+    letter-spacing: .02em;
+  }
+
+  .footer-hours {
+    font-size: 9pt;
+    color: #888;
+  }
+
+  .footer-web {
+    font-size: 8pt;
+    color: #aaa;
+    margin-top: 1mm;
+  }
+
+  /* ── 印刷最適化 ── */
+  @media print {
+    body { background: none; }
+    .page {
+      width: auto;
+      min-height: auto;
+      padding: 0;
+    }
+    .no-print { display: none; }
+  }
+
+  /* ── 画面プレビュー ── */
+  @media screen {
+    body {
+      background: #e8e8e8;
+      padding: 20px;
+    }
+    .page {
+      background: #fff;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+      border-radius: 4px;
+    }
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 30px;
+      background: #e85a3a;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .print-btn:hover { background: #d14a2a; }
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">印刷する</button>
+
+<div class="page">
+
+  <!-- ヘッダー -->
+  <div class="header">
+    <h1>加工料金一覧表</h1>
+    <p class="header-sub">福岡眼鏡加工センター ─ 眼鏡加工一筋50年</p>
+    <div class="header-badges">
+      <span class="badge">他店購入メガネOK</span>
+      <span class="badge">レンズ持込OK</span>
+      <span class="badge">来店・郵送どちらも対応</span>
+    </div>
+  </div>
+
+  <!-- A. 調整・軽作業 -->
+  <div class="category cat-a">
+    <div class="category-title">
+      <span class="label-tag">A</span>調整・軽作業
+    </div>
+    <table class="price-table">
+      <thead>
+        <tr><th>メニュー</th><th>料金（税込）</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="item-name">基本調整（フィッティング）</div>
+            <div class="item-note">掛け心地・ネジ締め・ノーズパッド調整</div>
+          </td>
+          <td class="item-price">1,100円〜</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">歪み直し（軽度）</div>
+            <div class="item-note">フレームの曲がり修正</div>
+          </td>
+          <td class="item-price">2,200円〜</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">歪み直し（強め / 分解調整含む）</div>
+            <div class="item-note">大きな歪み・分解しての調整</div>
+          </td>
+          <td class="item-price">3,300円〜</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">鼻パッド交換</div>
+            <div class="item-note">部品込み（特殊パッドは別途）</div>
+          </td>
+          <td class="item-price">1,100円〜</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">ネジ交換・締め直し</div>
+            <div class="item-note">単体でのご依頼</div>
+          </td>
+          <td class="item-price">550円〜</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- B. レンズ交換 -->
+  <div class="category cat-b">
+    <div class="category-title">
+      <span class="label-tag">B</span>レンズ交換（加工料 / レンズ代別途）
+    </div>
+    <table class="price-table">
+      <thead>
+        <tr><th>メニュー</th><th>料金（税込）</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="item-name">レンズ交換（標準フレーム）</div>
+            <div class="item-note">メタル・セルフレーム</div>
+          </td>
+          <td class="item-price">2,200円〜</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">レンズ交換（ナイロール）</div>
+            <div class="item-note">溝掘り加工が必要なフレーム</div>
+          </td>
+          <td class="item-price">2,750円〜</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">レンズ交換（縁なし・2ポイント）</div>
+            <div class="item-note">穴あけ加工が必要なフレーム</div>
+          </td>
+          <td class="item-price">4,950円〜</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">特殊加工</div>
+            <div class="item-note">高カーブ・特殊素材等</div>
+          </td>
+          <td class="item-price estimate">要見積り</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- C. 修理 -->
+  <div class="category cat-c">
+    <div class="category-title">
+      <span class="label-tag">C</span>修理
+    </div>
+    <table class="price-table">
+      <thead>
+        <tr><th>メニュー</th><th>料金（税込）</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="item-name">丁番（ヒンジ）ゆるみ・調整</div>
+            <div class="item-note">開閉部分の調整</div>
+          </td>
+          <td class="item-price">2,200円〜</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">丁番交換・ロー付け等</div>
+            <div class="item-note">溶接・交換が必要な場合</div>
+          </td>
+          <td class="item-price estimate">5,500円〜 要見積</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">テンプル折れ・ブリッジ修理</div>
+            <div class="item-note">つる・ブリッジの破損</div>
+          </td>
+          <td class="item-price estimate">5,500円〜 要見積</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">他店お断り案件</div>
+            <div class="item-note">まずはお電話でご相談ください</div>
+          </td>
+          <td class="item-price estimate">要見積り</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 注意書き -->
+  <div class="notes">
+    <p>※ 表示価格はすべて税込・目安です。状態確認後に正式なお見積りをお伝えします。</p>
+    <p>※ レンズ代は加工料とは別途かかります。レンズ持込OK・当店でのご用意も可能です。</p>
+    <p>※ 修理不可の場合は作業料をいただきません（郵送の返送料はご負担ください）。</p>
+    <p>※ お見積り後のキャンセルは無料です（作業着手前）。</p>
+  </div>
+
+  <!-- フッター -->
+  <div class="footer">
+    <div class="footer-left">
+      福岡眼鏡加工センター<br>
+      〒815-0032 福岡市南区向新町1丁目3-17<br>
+      リバーピア大橋301<br>
+      受付：平日 9:00〜17:00
+    </div>
+    <div class="footer-right">
+      <div class="footer-phone">090-2712-2040</div>
+      <div class="footer-hours">お気軽にお電話ください</div>
+      <div class="footer-web">https://hisatominipponshizai.github.io/fukuoka-megane/</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
