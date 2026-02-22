@@ -381,10 +381,75 @@
             font-weight: 600;
         }
 
+        .persona-card em {
+            display: block;
+            font-style: normal;
+            font-size: 14px;
+            font-weight: 800;
+            color: #1a2a4a;
+            margin: 2px 0 4px;
+        }
+
+        .back-to-guide {
+            display: inline-block;
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 8px;
+            transition: color 0.2s;
+        }
+
+        .back-to-guide:hover { color: #e85a3a; }
+
+        /* ========================================
+           電話が早い理由
+           ======================================== */
+        .why-call {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 30px;
+            text-align: center;
+        }
+
+        .why-call h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a2a4a;
+            margin-bottom: 24px;
+        }
+
+        .why-call-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .why-call-item {
+            padding: 20px;
+            background: #f8fafb;
+            border-radius: 8px;
+            border-top: 3px solid #1a2a4a;
+        }
+
+        .why-call-item strong {
+            display: block;
+            font-size: 15px;
+            color: #1a2a4a;
+            margin-bottom: 8px;
+        }
+
+        .why-call-item p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+        }
+
         @media (max-width: 600px) {
             .persona-grid { grid-template-columns: 1fr; gap: 10px; }
             .persona-card { padding: 14px 16px; }
             .persona-card strong { font-size: 14px; }
+            .persona-card em { font-size: 13px; }
+            .why-call-grid { grid-template-columns: 1fr; gap: 12px; }
         }
 
         /* ========================================
@@ -575,24 +640,28 @@
     <!-- ========================================
          ペルソナ導線
          ======================================== -->
-    <section class="persona-guide">
+    <section class="persona-guide" id="persona-top">
         <h2>どのご依頼ですか？</h2>
         <div class="persona-grid">
             <a href="#section-a" class="persona-card">
                 <strong>レンズだけ交換したい</strong>
+                <em>加工料 2,200円〜（レンズ代別）</em>
                 <span>→ レンズ加工料金を見る</span>
             </a>
             <a href="#section-bc" class="persona-card">
                 <strong>メガネがずり落ちる・調整したい</strong>
+                <em>基本調整 1,100円〜</em>
                 <span>→ 調整・軽作業メニューを見る</span>
             </a>
             <a href="#section-bc" class="persona-card">
                 <strong>壊れた・修理したい</strong>
+                <em>修理 2,200円〜 / 内容により見積</em>
                 <span>→ 修理メニューを見る</span>
             </a>
             <a href="tel:090-2712-2040" class="persona-card">
                 <strong>よく分からない・相談したい</strong>
-                <span>→ お電話ください（見積り無料）</span>
+                <em>お見積り無料</em>
+                <span>→ お電話ください</span>
             </a>
         </div>
     </section>
@@ -602,6 +671,7 @@
          ======================================== -->
     <div class="pricing-section" id="section-a">
 
+        <a href="#persona-top" class="back-to-guide">↑ どのご依頼ですか？ に戻る</a>
         <div class="section-label">
             <span class="tag tag-gold">A</span>レンズ加工料金（仕上がり目安をお選びいただけます）
         </div>
@@ -664,6 +734,7 @@
         <!-- ========================================
              B/C: 調整・修理
              ======================================== -->
+        <a href="#persona-top" class="back-to-guide">↑ どのご依頼ですか？ に戻る</a>
         <div class="two-col" id="section-bc">
             <div>
                 <div class="section-label">
@@ -695,6 +766,27 @@
         </div>
 
     </div>
+
+    <!-- ========================================
+         電話が早い理由
+         ======================================== -->
+    <section class="why-call">
+        <h2>お電話いただくと、すぐにお答えできます</h2>
+        <div class="why-call-grid">
+            <div class="why-call-item">
+                <strong>その場で概算をお伝えします</strong>
+                <p>メガネの状態をお聞きし、おおよその料金と納期をご案内します。</p>
+            </div>
+            <div class="why-call-item">
+                <strong>仕上がり目安をご相談いただけます</strong>
+                <p>お急ぎ・通常・ゆったり、ご都合に合わせてお選びいただけます。</p>
+            </div>
+            <div class="why-call-item">
+                <strong>来店・郵送どちらも案内できます</strong>
+                <p>遠方の方は郵送で対応。梱包方法もお電話でご説明します。</p>
+            </div>
+        </div>
+    </section>
 
     <!-- ========================================
          注意書き
