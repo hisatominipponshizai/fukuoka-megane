@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加工料金一覧 | 福岡眼鏡加工センター</title>
+    <meta name="description" content="福岡眼鏡加工センターの加工料金一覧。レンズ交換・修理・調整の料金を納期別にご案内。他店購入メガネOK・レンズ持込OK。お見積り無料。">
+    <style>
+        /* ========================================
+           共通リセット・ベース
+           ======================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",
+                         "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+                         "メイリオ", Meiryo, sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; }
+
+        /* ========================================
+           共通ヘッダー
+           ======================================== */
+        .site-header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(15, 26, 46, 0.95);
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo img { height: 40px; }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header-nav a {
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .header-nav a:hover,
+        .header-nav a.current { color: #f5a623; }
+
+        .header-phone {
+            color: #f5a623;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: #fff;
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ========================================
+           ページヒーロー（料金ページ用）
+           ======================================== */
+        .pricing-hero {
+            margin-top: 70px;
+            background: #1a2a4a;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px 40px;
+        }
+
+        .pricing-hero h1 {
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: .08em;
+            margin-bottom: 12px;
+        }
+
+        .pricing-hero p {
+            font-size: 16px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .pricing-hero .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-hero .badge {
+            display: inline-block;
+            padding: 6px 20px;
+            border: 1.5px solid rgba(245, 166, 35, 0.6);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #f5a623;
+        }
+
+        /* ========================================
+           TEL CTA バー
+           ======================================== */
+        .cta-bar {
+            background: #e85a3a;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .cta-bar-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-bar .cta-lead {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 4px;
+        }
+
+        .cta-bar .cta-phone {
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: .02em;
+        }
+
+        .cta-bar .cta-phone a {
+            color: #fff;
+        }
+
+        .cta-bar .cta-hours {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-top: 2px;
+        }
+
+        /* ========================================
+           料金セクション（メインコンテンツ）
+           ======================================== */
+        .pricing-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* セクション見出し */
+        .section-label {
+            font-size: 20px;
+            font-weight: 700;
+            padding: 14px 20px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #1a2a4a;
+            color: #fff;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 900;
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .tag-gold { background: #f5a623; }
+        .tag-red { background: #e85a3a; }
+        .tag-navy { background: #3a5a8a; }
+
+        /* ========================================
+           A: レンズ加工料金テーブル
+           ======================================== */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+            margin-bottom: 40px;
+        }
+
+        .pricing-table thead th {
+            padding: 12px 10px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            border-bottom: 2px solid #1a2a4a;
+            color: #1a2a4a;
+            background: #f0f2f7;
+        }
+
+        .pricing-table thead th:first-child {
+            text-align: left;
+            width: 38%;
+        }
+
+        .pricing-table thead th small {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            color: #888;
+        }
+
+        .pricing-table thead th.rush { background: #fef2ef; color: #e85a3a; }
+        .pricing-table thead th.normal { background: #eef4ff; color: #1a2a4a; }
+        .pricing-table thead th.relax { background: #f0f7ef; color: #3a7a2a; }
+
+        .pricing-table tbody td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #e0e4eb;
+            vertical-align: middle;
+            line-height: 1.5;
+        }
+
+        .pricing-table tbody td:first-child { text-align: left; }
+
+        .pricing-table tbody td:not(:first-child) {
+            text-align: center;
+            font-weight: 800;
+            font-size: 17px;
+        }
+
+        .pricing-table tbody tr:nth-child(even) { background: #fafbfd; }
+        .pricing-table tbody tr:last-child td { border-bottom: none; }
+
+        .item-name {
+            font-weight: 700;
+            color: #1a2a4a;
+            font-size: 15px;
+        }
+
+        .item-note {
+            font-size: 13px;
+            color: #888;
+            margin-top: 3px;
+        }
+
+        .price-rush { color: #e85a3a; }
+        .price-normal { color: #1a2a4a; }
+        .price-relax { color: #3a7a2a; }
+
+        .estimate-note {
+            text-align: right;
+            color: #999;
+            font-size: 14px;
+            padding: 10px 12px;
+        }
+
+        /* ========================================
+           B/C: 調整・修理（2カラム）
+           ======================================== */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .simple-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+        }
+
+        .simple-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e0e4eb;
+            vertical-align: middle;
+        }
+
+        .simple-table tr:last-child td { border-bottom: none; }
+        .simple-table tr:nth-child(even) { background: #fafbfd; }
+
+        .item-price {
+            text-align: right;
+            font-weight: 800;
+            font-size: 16px;
+            color: #e85a3a;
+            white-space: nowrap;
+        }
+
+        .item-price.estimate {
+            font-size: 14px;
+            color: #999;
+            font-weight: 600;
+        }
+
+        /* ========================================
+           注意書き
+           ======================================== */
+        .notes-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 50px;
+        }
+
+        .notes {
+            padding: 20px 24px;
+            background: #f8f8f5;
+            border-radius: 6px;
+            border-left: 4px solid #f5a623;
+        }
+
+        .notes p {
+            font-size: 13px;
+            color: #777;
+            line-height: 2;
+        }
+
+        /* ========================================
+           共通フッター
+           ======================================== */
+        .site-footer {
+            background: #0f1a2e;
+            color: #fff;
+            padding: 50px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #f5a623;
+        }
+
+        .footer-info p {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 2;
+        }
+
+        .footer-nav h4 {
+            font-size: 14px;
+            color: #f5a623;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav ul { list-style: none; }
+        .footer-nav li { margin-bottom: 8px; }
+
+        .footer-nav a {
+            font-size: 14px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .footer-nav a:hover {
+            opacity: 1;
+            color: #f5a623;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+            opacity: 0.5;
+        }
+
+        /* ========================================
+           レスポンシブ
+           ======================================== */
+        @media (max-width: 900px) {
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0; right: 0;
+                background: rgba(15, 26, 46, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .header-nav.active { display: flex; }
+            .hamburger { display: flex; }
+
+            .pricing-hero h1 { font-size: 28px; }
+
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .cta-bar .cta-phone { font-size: 28px; }
+        }
+
+        @media (max-width: 600px) {
+            .pricing-hero { padding: 40px 15px 30px; }
+            .pricing-hero h1 { font-size: 24px; }
+            .pricing-hero .badge { font-size: 12px; padding: 4px 14px; }
+
+            .pricing-section { padding: 30px 15px; }
+            .section-label { font-size: 17px; padding: 12px 16px; }
+
+            .pricing-table { font-size: 13px; }
+            .pricing-table thead th { font-size: 11px; padding: 8px 4px; }
+            .pricing-table thead th small { font-size: 10px; }
+            .pricing-table tbody td { padding: 10px 6px; }
+            .pricing-table tbody td:not(:first-child) { font-size: 14px; }
+            .item-name { font-size: 13px; }
+            .item-note { font-size: 11px; }
+
+            .simple-table { font-size: 14px; }
+            .simple-table td { padding: 8px; }
+            .item-price { font-size: 14px; }
+
+            .notes p { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================
+         共通ヘッダー
+         ======================================== -->
+    <header class="site-header">
+        <a href="index.html" class="header-logo">
+            <img src="photos/logo.webp" alt="福岡眼鏡加工センター">
+        </a>
+        <nav class="header-nav" id="headerNav">
+            <a href="pricing.html" class="current">加工料金</a>
+            <a href="business.html">業者の方</a>
+            <a href="customer.html">一般のお客様</a>
+            <a href="about.html">職人紹介</a>
+            <a href="contact.html">お問い合わせ</a>
+            <a href="tel:090-2712-2040" class="header-phone">090-2712-2040</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- ========================================
+         ヒーロー
+         ======================================== -->
+    <section class="pricing-hero">
+        <h1>加工料金一覧</h1>
+        <p>眼鏡加工一筋50年 ─ すべての料金を透明にご案内します</p>
+        <div class="hero-badges">
+            <span class="badge">他店購入メガネOK</span>
+            <span class="badge">レンズ持込OK</span>
+            <span class="badge">来店・郵送どちらも対応</span>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TEL CTA（上部）
+         ======================================== -->
+    <div class="cta-bar">
+        <div class="cta-bar-inner">
+            <p class="cta-lead">お見積り無料 ─ お気軽にお電話ください</p>
+            <p class="cta-phone"><a href="tel:090-2712-2040">090-2712-2040</a></p>
+            <p class="cta-hours">受付：平日 9:00〜17:00</p>
+        </div>
+    </div>
+
+    <!-- ========================================
+         A. レンズ加工料金
+         ======================================== -->
+    <div class="pricing-section">
+
+        <div class="section-label">
+            <span class="tag tag-gold">A</span>レンズ加工料金（仕上がり目安をお選びいただけます）
+        </div>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>加工種類</th>
+                    <th class="rush">お急ぎ対応<small>最短当日〜翌日</small></th>
+                    <th class="normal">通常仕上げ<small>3営業日</small></th>
+                    <th class="relax">ゆったり仕上げ<small>5営業日</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="item-name">標準フレーム（メタル・セル）</div>
+                        <div class="item-note">一般的なメガネフレーム</div>
+                    </td>
+                    <td class="price-rush">&yen;2,750</td>
+                    <td class="price-normal">&yen;2,200</td>
+                    <td class="price-relax">&yen;1,650</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-name">ナイロール（溝掘り加工）</div>
+                        <div class="item-note">ナイロン糸で固定するタイプ</div>
+                    </td>
+                    <td class="price-rush">&yen;3,300</td>
+                    <td class="price-normal">&yen;2,750</td>
+                    <td class="price-relax">&yen;2,200</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-name">2ポイント（縁なし・穴あけ）</div>
+                        <div class="item-note">精密な穴あけ加工が必要なフレーム</div>
+                    </td>
+                    <td class="price-rush">&yen;5,500</td>
+                    <td class="price-normal">&yen;4,950</td>
+                    <td class="price-relax">&yen;3,850</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-name">ファセット（面取り・多面カット）</div>
+                        <div class="item-note">レンズ周縁の装飾カット加工</div>
+                    </td>
+                    <td class="price-rush">&yen;13,200</td>
+                    <td class="price-normal">&yen;11,000</td>
+                    <td class="price-relax">&yen;8,800</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-name">特殊加工（高カーブ・特殊素材等）</div>
+                        <div class="item-note">べっ甲・バッファローホーン・木製等</div>
+                    </td>
+                    <td colspan="3" class="estimate-note">要お見積り ─ まずはお電話ください</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ========================================
+             B/C: 調整・修理
+             ======================================== -->
+        <div class="two-col">
+            <div>
+                <div class="section-label">
+                    <span class="tag tag-red">B</span>調整・軽作業
+                </div>
+                <table class="simple-table">
+                    <tbody>
+                        <tr><td><span class="item-name">基本調整（フィッティング）</span></td><td class="item-price">1,100円〜</td></tr>
+                        <tr><td><span class="item-name">歪み直し（軽度）</span></td><td class="item-price">2,200円〜</td></tr>
+                        <tr><td><span class="item-name">歪み直し（強め/分解含む）</span></td><td class="item-price">3,300円〜</td></tr>
+                        <tr><td><span class="item-name">鼻パッド交換</span> <span class="item-note">部品込み</span></td><td class="item-price">1,100円〜</td></tr>
+                        <tr><td><span class="item-name">ネジ交換・締め直し</span></td><td class="item-price">550円〜</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <div class="section-label">
+                    <span class="tag tag-navy">C</span>修理
+                </div>
+                <table class="simple-table">
+                    <tbody>
+                        <tr><td><span class="item-name">丁番ゆるみ・調整</span></td><td class="item-price">2,200円〜</td></tr>
+                        <tr><td><span class="item-name">丁番交換・ロー付け等</span></td><td class="item-price">5,500円〜</td></tr>
+                        <tr><td><span class="item-name">テンプル折れ・ブリッジ修理</span></td><td class="item-price">5,500円〜</td></tr>
+                        <tr><td><span class="item-name">他店お断り案件</span></td><td class="item-price estimate">要見積り</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ========================================
+         注意書き
+         ======================================== -->
+    <div class="notes-section">
+        <div class="notes">
+            <p>※ 価格はすべて税込・目安です。状態確認後に正式なお見積りをお伝えします。レンズ代は加工料とは別途です。</p>
+            <p>※ 納期はフレーム・レンズ到着後の起算です。数量・内容によりお見積りが変わる場合があります。</p>
+            <p>※ 修理不可の場合は作業料をいただきません。お見積り後のキャンセルは無料です（作業着手前）。</p>
+            <p>※ ご来店の場合：作業優先のため当日加工はお約束できません。お預かり後に日程をご案内します。</p>
+        </div>
+    </div>
+
+    <!-- ========================================
+         TEL CTA（下部）
+         ======================================== -->
+    <div class="cta-bar">
+        <div class="cta-bar-inner">
+            <p class="cta-lead">まずはお気軽にお電話ください ─ お見積り無料</p>
+            <p class="cta-phone"><a href="tel:090-2712-2040">090-2712-2040</a></p>
+            <p class="cta-hours">受付：平日 9:00〜17:00 ／ 職人が直接対応します</p>
+        </div>
+    </div>
+
+    <!-- ========================================
+         共通フッター
+         ======================================== -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h4>福岡眼鏡加工センター</h4>
+                <p>
+                    〒815-0032<br>
+                    福岡市南区向新町1丁目3-17<br>
+                    リバーピア大橋301<br>
+                    <br>
+                    Tel: 090-2712-2040<br>
+                    営業時間：平日 9:00〜17:00
+                </p>
+            </div>
+            <div class="footer-nav">
+                <h4>サイトメニュー</h4>
+                <ul>
+                    <li><a href="index.html">トップページ</a></li>
+                    <li><a href="pricing.html">加工料金</a></li>
+                    <li><a href="business.html">業者の方</a></li>
+                    <li><a href="customer.html">一般のお客様</a></li>
+                    <li><a href="about.html">職人紹介</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>その他</h4>
+                <ul>
+                    <li><a href="privacy.html">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 福岡眼鏡加工センター — 眼鏡加工一筋50年</p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         ハンバーガーメニュー
+         ======================================== -->
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('headerNav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
