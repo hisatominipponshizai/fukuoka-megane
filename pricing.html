@@ -332,6 +332,62 @@
         }
 
         /* ========================================
+           ペルソナ導線
+           ======================================== */
+        .persona-guide {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 10px;
+        }
+
+        .persona-guide h2 {
+            font-size: 22px;
+            font-weight: 700;
+            text-align: center;
+            color: #1a2a4a;
+            margin-bottom: 20px;
+        }
+
+        .persona-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .persona-card {
+            display: block;
+            padding: 18px 20px;
+            background: #fff;
+            border: 2px solid #e0e4eb;
+            border-radius: 8px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .persona-card:hover {
+            border-color: #e85a3a;
+            box-shadow: 0 4px 16px rgba(232, 90, 58, 0.12);
+        }
+
+        .persona-card strong {
+            display: block;
+            font-size: 16px;
+            color: #1a2a4a;
+            margin-bottom: 4px;
+        }
+
+        .persona-card span {
+            font-size: 13px;
+            color: #e85a3a;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .persona-grid { grid-template-columns: 1fr; gap: 10px; }
+            .persona-card { padding: 14px 16px; }
+            .persona-card strong { font-size: 14px; }
+        }
+
+        /* ========================================
            注意書き
            ======================================== */
         .notes-section {
@@ -517,9 +573,34 @@
     </div>
 
     <!-- ========================================
+         ペルソナ導線
+         ======================================== -->
+    <section class="persona-guide">
+        <h2>どのご依頼ですか？</h2>
+        <div class="persona-grid">
+            <a href="#section-a" class="persona-card">
+                <strong>レンズだけ交換したい</strong>
+                <span>→ レンズ加工料金を見る</span>
+            </a>
+            <a href="#section-bc" class="persona-card">
+                <strong>メガネがずり落ちる・調整したい</strong>
+                <span>→ 調整・軽作業メニューを見る</span>
+            </a>
+            <a href="#section-bc" class="persona-card">
+                <strong>壊れた・修理したい</strong>
+                <span>→ 修理メニューを見る</span>
+            </a>
+            <a href="tel:090-2712-2040" class="persona-card">
+                <strong>よく分からない・相談したい</strong>
+                <span>→ お電話ください（見積り無料）</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ========================================
          A. レンズ加工料金
          ======================================== -->
-    <div class="pricing-section">
+    <div class="pricing-section" id="section-a">
 
         <div class="section-label">
             <span class="tag tag-gold">A</span>レンズ加工料金（仕上がり目安をお選びいただけます）
@@ -583,7 +664,7 @@
         <!-- ========================================
              B/C: 調整・修理
              ======================================== -->
-        <div class="two-col">
+        <div class="two-col" id="section-bc">
             <div>
                 <div class="section-label">
                     <span class="tag tag-red">B</span>調整・軽作業
