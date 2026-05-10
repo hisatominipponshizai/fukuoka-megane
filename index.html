@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18128910300"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-18128910300');
 </script>
-  <!-- Event snippet for Click-to-Call conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
 function gtag_report_conversion(url) {
   var callback = function () {
@@ -203,12 +199,6 @@ function gtag_report_conversion(url) {
             letter-spacing: 0.1em;
         }
 
-        .hero-subtitle {
-            font-size: 14px;
-            opacity: 0.08;
-            margin-bottom: 8px;
-        }
-
         .hero-position {
             font-size: 14px;
             color: #f5a623;
@@ -280,20 +270,10 @@ function gtag_report_conversion(url) {
             border: 2px solid #fff;
         }
 
-        .btn-outline:hover {
-            background: #fff;
-            color: #1a2a4a;
-        }
-
         .btn-gold {
             background: transparent;
             color: #f5a623;
             border: 2px solid #f5a623;
-        }
-
-        .btn-gold:hover {
-            background: #f5a623;
-            color: #1a2a4a;
         }
 
         /* ========================================
@@ -315,12 +295,8 @@ function gtag_report_conversion(url) {
         }
 
         /* ========================================
-           2つの入口セクション
+           2つの入口
            ======================================== */
-        .gateway-section {
-            background: #fff;
-        }
-
         .gateway-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -334,11 +310,6 @@ function gtag_report_conversion(url) {
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .gateway-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
         .gateway-card--business {
             background: #1a2a4a;
             color: #fff;
@@ -347,36 +318,6 @@ function gtag_report_conversion(url) {
         .gateway-card--customer {
             background: #fef6f3;
             color: #333;
-        }
-
-        .gateway-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .gateway-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .gateway-card--business h3 {
-            color: #f5a623;
-        }
-
-        .gateway-card--customer h3 {
-            color: #e85a3a;
-        }
-
-        .gateway-card p {
-            font-size: 15px;
-            margin-bottom: 25px;
-            opacity: 0.85;
-            line-height: 1.8;
-        }
-
-        .gateway-card .btn {
-            font-size: 15px;
-            padding: 14px 32px;
         }
 
         /* ========================================
@@ -400,19 +341,8 @@ function gtag_report_conversion(url) {
             color: #f5a623;
         }
 
-        .stat-item .unit {
-            font-size: 24px;
-            color: #f5a623;
-        }
-
-        .stat-item .label {
-            font-size: 16px;
-            opacity: 0.8;
-            margin-top: 10px;
-        }
-
         /* ========================================
-           サービス概要セクション
+           サービス概要
            ======================================== */
         .overview-section {
             background: #f8f9fa;
@@ -431,50 +361,6 @@ function gtag_report_conversion(url) {
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
 
-        .overview-card h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid;
-        }
-
-        .overview-card--business h3 {
-            color: #1a2a4a;
-            border-color: #f5a623;
-        }
-
-        .overview-card--customer h3 {
-            color: #e85a3a;
-            border-color: #e85a3a;
-        }
-
-        .overview-list {
-            list-style: none;
-        }
-
-        .overview-list li {
-            padding: 8px 0;
-            padding-left: 24px;
-            position: relative;
-            font-size: 15px;
-            color: #555;
-        }
-
-        .overview-list li::before {
-            content: "▸";
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .overview-card--business .overview-list li::before {
-            color: #f5a623;
-        }
-
-        .overview-card--customer .overview-list li::before {
-            color: #e85a3a;
-        }
-
         /* ========================================
            CTAセクション
            ======================================== */
@@ -482,10 +368,6 @@ function gtag_report_conversion(url) {
             background: linear-gradient(135deg, #1a2a4a 0%, #0f1a2e 100%);
             color: #fff;
             text-align: center;
-        }
-
-        .cta-section .section-title {
-            color: #fff;
         }
 
         .cta-phone {
@@ -496,25 +378,6 @@ function gtag_report_conversion(url) {
 
         .cta-phone a {
             color: #fff;
-        }
-
-        .cta-hours {
-            font-size: 14px;
-            opacity: 0.7;
-            margin-bottom: 10px;
-        }
-
-        .cta-direct {
-            color: #f5a623;
-            font-size: 15px;
-            margin-bottom: 30px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
         }
 
         /* ========================================
@@ -532,173 +395,17 @@ function gtag_report_conversion(url) {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 40px;
-            margin-bottom: 40px;
         }
 
-        .footer-info h4 {
-            font-size: 18px;
-            margin-bottom: 15px;
-            color: #f5a623;
-        }
-
-        .footer-info p {
-            font-size: 14px;
-            opacity: 0.8;
-            line-height: 2;
-        }
-
-        .footer-nav h4 {
-            font-size: 14px;
-            color: #f5a623;
-            margin-bottom: 15px;
-        }
-
-        .footer-nav ul {
-            list-style: none;
-        }
-
-        .footer-nav li {
-            margin-bottom: 8px;
-        }
-
-        .footer-nav a {
-            font-size: 14px;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-
-        .footer-nav a:hover {
-            opacity: 1;
-            color: #f5a623;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 13px;
-            opacity: 0.5;
-        }
-
-        /* ========================================
-           レスポンシブ
-           ======================================== */
+        /* レスポンシブ用 */
         @media (max-width: 900px) {
-            .header-nav {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: rgba(15, 26, 46, 0.98);
-                flex-direction: column;
-                padding: 20px;
-                gap: 15px;
-            }
-
-            .header-nav.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero-phone {
-                font-size: 28px;
-            }
-
-            .hero-catchcopy {
-                font-size: 18px;
-            }
-
-            .gateway-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .overview-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .cta-phone {
-                font-size: 32px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            section {
-                padding: 50px 15px;
-            }
-
-            .section-title {
-                font-size: 24px;
-                margin-bottom: 30px;
-            }
-
-            .hero h1 {
-                font-size: 26px;
-            }
-
-            .hero-logo {
-                max-width: 240px;
-            }
-
-            .hero-phone {
-                font-size: 24px;
-            }
-
-            .hero-catchcopy {
-                font-size: 16px;
-            }
-
-            .gateway-card {
-                padding: 35px 25px;
-            }
-
-            .gateway-card h3 {
-                font-size: 20px;
-            }
-
-            .stat-item .number {
-                font-size: 48px;
-            }
-
-            .stat-item .unit {
-                font-size: 18px;
-            }
-
-            .btn {
-                display: block;
-                text-align: center;
-                margin: 10px 0;
-                padding: 15px 30px;
-                font-size: 16px;
-            }
-
-            .cta-phone {
-                font-size: 28px;
-            }
+            .header-nav { display: none; }
+            .hero h1 { font-size: 32px; }
+            .gateway-grid, .stats-grid, .overview-grid, .footer-content { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- ========================================
-         共通ヘッダー
-         ======================================== -->
     <header class="site-header">
         <a href="index.html" class="header-logo">
             <img src="photos/logo-header.png" alt="福岡眼鏡加工センター">
@@ -709,27 +416,21 @@ function gtag_report_conversion(url) {
             <a href="customer.html">一般のお客様</a>
             <a href="about.html">職人紹介</a>
             <a href="contact.html">お問い合わせ</a>
-            <a href="tel:090-2712-2040" class="header-phone">090-2712-2040</a>
+            <a href="tel:090-2712-2040" class="header-phone" onclick="return gtag_report_conversion('tel:090-2712-2040');">090-2712-2040</a>
         </nav>
         <button class="hamburger" id="hamburger" aria-label="メニュー">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </button>
     </header>
 
-    <!-- ========================================
-         ヒーロー
-         ======================================== -->
     <section class="hero">
         <div class="hero-content">
-            <img src="photos/hero-logo.png" alt="福岡眼鏡加工センター" class="hero-logo" fetchpriority="high" decoding="async">
+            <img src="photos/hero-logo.png" alt="福岡眼鏡加工センター" class="hero-logo">
             <h1>福岡の眼鏡加工・メガネ修理専門工房</h1>
             <p class="hero-role">眼鏡の加工・修理専門工房</p>
-            <p class="hero-phone"><a href="tel:090-2712-2040">090-2712-2040</a></p>
+            <p class="hero-phone"><a href="tel:090-2712-2040" onclick="return gtag_report_conversion('tel:090-2712-2040');">090-2712-2040</a></p>
             <p class="hero-hours">受付時間：平日 9:00〜17:00</p>
             <p class="hero-direct">職人が直接対応します</p>
-            <p class="hero-position">販売店ではありません。加工・修理の専門工房です。</p>
             <p class="hero-catchcopy">加工歴50年・累計10万本の実績<br>「他店で断られた難加工」お任せください</p>
             <div>
                 <a href="business.html" class="btn btn-gold">眼鏡店・業者の方</a>
@@ -738,152 +439,25 @@ function gtag_report_conversion(url) {
         </div>
     </section>
 
-    <!-- ========================================
-         SEO導入文
-         ======================================== -->
-    <section style="max-width:800px;margin:40px auto 0;padding:0 20px;text-align:center;">
-        <p style="font-size:15px;line-height:1.9;color:#555;">
-            福岡市でメガネ修理・眼鏡加工を専門に行う工房です。他店購入フレームやレンズ交換（持ち込み可）にも対応しています。
-        </p>
-    </section>
-
-    <!-- ========================================
-         実績数字
-         ======================================== -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="number">50</span><span class="unit">年</span>
-                    <p class="label">眼鏡加工一筋</p>
-                </div>
-                <div class="stat-item">
-                    <span class="number">10</span><span class="unit">万本+</span>
-                    <p class="label">累計加工実績</p>
-                </div>
-                <div class="stat-item">
-                    <span class="number">0.1</span><span class="unit">mm</span>
-                    <p class="label">精密な仕上がり</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         2つの入口
-         ======================================== -->
-    <section class="gateway-section">
-        <div class="container">
-            <h2 class="section-title">お客様に合わせたご案内</h2>
-            <div class="gateway-grid">
-                <div class="gateway-card gateway-card--business">
-                    <div class="gateway-icon">&#9881;</div>
-                    <h3>眼鏡店・業者の方</h3>
-                    <p>レンズ加工の外注先をお探しの眼鏡店様へ。<br>標準加工から2ポイント・特殊素材まで、<br>全国対応いたします。</p>
-                    <a href="business.html" class="btn btn-gold">業者向けページへ</a>
-                </div>
-                <div class="gateway-card gateway-card--customer">
-                    <div class="gateway-icon">&#128083;</div>
-                    <h3>一般のお客様</h3>
-                    <p>レンズ交換・フレーム持込加工・<br>修理や調整のご相談を承ります。<br>基本調整 1,100円〜</p>
-                    <a href="customer.html" class="btn btn-primary">一般のお客様ページへ</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         サービス概要
-         ======================================== -->
-    <section class="overview-section">
-        <div class="container">
-            <h2 class="section-title">サービス一覧</h2>
-            <div class="overview-grid">
-                <div class="overview-card overview-card--business">
-                    <h3>業者様向けサービス</h3>
-                    <ul class="overview-list">
-                        <li>標準メタル・セルフレーム加工</li>
-                        <li>ナイロール（溝掘り）</li>
-                        <li>2ポイント（縁なし・ツーポイント）</li>
-                        <li>ファセット（面取り・多面カット）</li>
-                        <li>特殊素材（べっ甲・バッファローホーン・木製）</li>
-                        <li>高カーブレンズ対応</li>
-                        <li>大口ロット対応（10本以上割引）</li>
-                    </ul>
-                </div>
-                <div class="overview-card overview-card--customer">
-                    <h3>一般のお客様向けサービス</h3>
-                    <ul class="overview-list">
-                        <li>基本調整（フィッティング） 1,100円〜</li>
-                        <li>歪み直し 2,200円〜</li>
-                        <li>鼻パッド交換 1,100円〜</li>
-                        <li>レンズ交換（持込OK） 2,200円〜</li>
-                        <li>フレーム修理 2,200円〜</li>
-                        <li>他店お断り案件もご相談ください</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         CTA（お問い合わせ導線）
-         ======================================== -->
     <section class="cta-section">
         <div class="container">
             <h2 class="section-title">まずはお気軽にご相談ください</h2>
             <p class="cta-direct">職人が直接お電話に出ます</p>
-            <p class="cta-phone"><a href="tel:090-2712-2040">090-2712-2040</a></p>
+            <p class="cta-phone"><a href="tel:090-2712-2040" onclick="return gtag_report_conversion('tel:090-2712-2040');">090-2712-2040</a></p>
             <p class="cta-hours">受付時間：平日 9:00〜17:00</p>
             <div class="cta-buttons" style="margin-top: 30px;">
-                <a href="tel:090-2712-2040" class="btn btn-primary">今すぐお電話</a>
+                <a href="tel:090-2712-2040" class="btn btn-primary" onclick="return gtag_report_conversion('tel:090-2712-2040');">今すぐお電話</a>
                 <a href="contact.html" class="btn btn-outline">お問い合わせフォーム</a>
             </div>
         </div>
     </section>
 
-    <!-- ========================================
-         共通フッター
-         ======================================== -->
     <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h4>福岡眼鏡加工センター</h4>
-                <p>
-                    〒815-0032<br>
-                    福岡市南区向新町1丁目3-17<br>
-                    リバーピア大橋301<br>
-                    <br>
-                    Tel: 090-2712-2040<br>
-                    営業時間：平日 9:00〜17:00
-                </p>
-            </div>
-            <div class="footer-nav">
-                <h4>サイトメニュー</h4>
-                <ul>
-                    <li><a href="index.html">トップページ</a></li>
-                    <li><a href="pricing.html">加工料金</a></li>
-                    <li><a href="business.html">業者の方</a></li>
-                    <li><a href="customer.html">一般のお客様</a></li>
-                    <li><a href="about.html">職人紹介</a></li>
-                    <li><a href="contact.html">お問い合わせ</a></li>
-                </ul>
-            </div>
-            <div class="footer-nav">
-                <h4>その他</h4>
-                <ul>
-                    <li><a href="privacy.html">プライバシーポリシー</a></li>
-                </ul>
-            </div>
-        </div>
         <div class="footer-bottom">
             <p>&copy; 福岡眼鏡加工センター — 眼鏡加工一筋50年</p>
         </div>
     </footer>
 
-    <!-- ========================================
-         ハンバーガーメニュー
-         ======================================== -->
     <script>
         document.getElementById('hamburger').addEventListener('click', function() {
             this.classList.toggle('active');
